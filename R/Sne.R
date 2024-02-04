@@ -12,7 +12,7 @@ source("R/Tay.R")
 #' \eqn{q < 2.05} and \eqn{\varepsilon< 0.05} tends to cause problems in
 #' "too long a vector", atleaast as tested on my computer.
 #'
-#' @return a neural network that approximates \eqn{\sin} when given
+#' @return A neural network that approximates \eqn{\sin} when given
 #' an appropriate \eqn{n,q,\varepsilon} and instantiated with ReLU
 #' activation and given value \eqn{x}.
 #' @export
