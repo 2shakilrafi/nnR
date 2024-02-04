@@ -1,0 +1,175 @@
+source("R/aux_fun.R")
+source("R/is_nn.R")
+
+
+#' @title comp
+#' @description The function that takes the composition of two neural
+#' networks assuming they are compatible, i.e., given
+#' \eqn{\nu_1, \nu_2 \in \mathsf{NN}}, it must be the case that
+#' \eqn{\mathsf{I}(\nu)_1 = \mathsf{O}(\nu_2)}.
+#'
+#' @param phi_1 first neural network to be composed, goes on the left
+#' @param phi_2 second neural network to be composed, goes on right
+#'
+#' @return The composed neural network. See also \code{\link{dep}}.
+#' Composition of neural networks is the operation defined for \eqn{\nu_1 \in \mathsf{NN}}
+#' and \eqn{\nu_2 \in \mathsf{NN}} as:
+#'
+#' \deqn{
+#' \nu_1 \bullet \nu_2 = \begin{cases} (( W'_1,b'_1 ),
+#' ( W'_2,b'_2 ), ...,( W'_{M-1}, b'_{M-1}), ( W_1W'_M, W_1b'_{M} + b_1), (W_2, b_2 ),\\...,
+#' ( W_L,b_L )) & :( L> 1 ) \land ( M > 1 ) \\((W_1W'_1,W_1b'_1+b_1),(W_2,b_2), (W_3,b_3),...,
+#' (W_Lb_L)) & :(L>1) \land (M=1) \\((W'_1, b'_1),(W'_2,b'_2), ...,
+#' (W'_{M-1}, b'_{M-1})(W_1, b'_M + b_1)) &:(L=1) \land (M>1) \\ ((W_1W'_1, W_1b'_1+b_1)) &:(L=1)
+#' \land (M=1)\end{cases}
+#'
+
+#' }
+#'
+#'
+#' @references Grohs, P., Hornung, F., Jentzen, A. et al.
+#' Space-time error estimates for deep neural network approximations
+#' for differential equations. Adv Comput Math 49, 4 (2023).
+#' \url{https://doi.org/10.1007/s10444-022-09970-2}.
+#'
+#' @references Definition 2.1.1. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).
+#' Mathematical introduction to deep learning: Methods, implementations,
+#' and theory. \url{https://arxiv.org/abs/2310.20360}
+#'
+#' \emph{Remark:} We have two versions of this function, an
+#' infix version for close resemblance to mathematical notation and
+#' prefix version.
+
+#' @encoding utf8
+#' @export
+#'
+
+
+comp <- function(phi_1, phi_2) {
+  if (phi_1 |> is_nn() && phi_2 |> is_nn()) {
+    dep(phi_1) -> L
+    dep(phi_2) -> L_
+
+    if (L > 1 & L_ > 1) {
+      phi_2[-L_] -> beginning
+      phi_1[-1] -> end
+      phi_1[[1]]$W %*% phi_2[[L_]]$W -> mid_W
+      phi_1[[1]]$W %*% phi_2[[L_]]$b + phi_1[[1]]$b -> mid_b
+      list(W = mid_W, b = mid_b) -> mid
+      c(
+        beginning,
+        list(mid),
+        end
+      ) -> composed_network
+      return(composed_network)
+    } else if (L > 1 & L_ == 1) {
+      phi_1[[1]]$W %*% phi_2[[1]]$W -> beginning_W
+      phi_1[[1]]$W %*% phi_2[[1]]$b + phi_1[[1]]$b -> beginning_b
+      list(
+        W = beginning_W,
+        b = beginning_b
+      ) -> beginning
+      phi_1[-1] -> end
+      c(
+        list(beginning),
+        end
+      ) -> composed_network
+      return(composed_network)
+    } else if (L == 1 & L_ > 1) {
+      phi_2[-L_] -> beginning
+      phi_1[[1]]$W %*% phi_2[[L_]]$W -> end_W
+      phi_1[[1]]$W %*% phi_2[[L_]]$b + phi_1[[1]]$b -> end_b
+      list(
+        W = end_W,
+        b = end_b
+      ) -> end
+      c(
+        beginning,
+        list(end)
+      ) -> composed_network
+      return(composed_network)
+    } else if (L == 1 & L_ == 1) {
+      list() -> composed_network
+      phi_1[[1]]$W %*% phi_2[[1]]$W -> W
+      phi_1[[1]]$W %*% phi_2[[1]]$b + phi_1[[1]]$b -> b
+      list(
+        W = W,
+        b = b
+      ) -> composed_network[[1]]
+      return(composed_network)
+    } else {
+      stop("Dimensionality mismatch")
+    }
+  } else {
+    stop("Only neural networks can be composed.")
+  }
+}
+
+#' The `infix version of comp function
+#'
+#' @param phi_1 first neural network to be composed, goes on the left
+#' @param phi_2 second neural network to be composed, goes on right
+#'
+#' @rdname comp
+#' @export
+
+
+`%comp%` <- function(phi_1, phi_2) {
+  if (phi_1 |> is_nn() && phi_2 |> is_nn()) {
+    dep(phi_1) -> L
+    dep(phi_2) -> L_
+
+    if (L > 1 & L_ > 1) {
+      phi_2[-L_] -> beginning
+      phi_1[-1] -> end
+      phi_1[[1]]$W %*% phi_2[[L_]]$W -> mid_W
+      phi_1[[1]]$W %*% phi_2[[L_]]$b + phi_1[[1]]$b -> mid_b
+      list(W = mid_W, b = mid_b) -> mid
+      c(
+        beginning,
+        list(mid),
+        end
+      ) -> composed_network
+      return(composed_network)
+    } else if (L > 1 & L_ == 1) {
+      phi_1[[1]]$W %*% phi_2[[1]]$W -> beginning_W
+      phi_1[[1]]$W %*% phi_2[[1]]$b + phi_1[[1]]$b -> beginning_b
+      list(
+        W = beginning_W,
+        b = beginning_b
+      ) -> beginning
+      phi_1[-1] -> end
+      c(
+        list(beginning),
+        end
+      ) -> composed_network
+      return(composed_network)
+    } else if (L == 1 & L_ > 1) {
+      phi_2[-L_] -> beginning
+      phi_1[[1]]$W %*% phi_2[[L_]]$W -> end_W
+      phi_1[[1]]$W %*% phi_2[[L_]]$b + phi_1[[1]]$b -> end_b
+      list(
+        W = end_W,
+        b = end_b
+      ) -> end
+      c(
+        beginning,
+        list(end)
+      ) -> composed_network
+      return(composed_network)
+    } else if (L == 1 & L_ == 1) {
+      list() -> composed_network
+      phi_1[[1]]$W %*% phi_2[[1]]$W -> W
+      phi_1[[1]]$W %*% phi_2[[1]]$b + phi_1[[1]]$b -> b
+      list(
+        W = W,
+        b = b
+      ) -> composed_network[[1]]
+      return(composed_network)
+    } else {
+      stop("Dimensionality mismatch")
+    }
+  } else {
+    stop("Only neural networks can be composed.")
+  }
+}
