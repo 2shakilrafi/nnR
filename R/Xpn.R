@@ -14,6 +14,11 @@ source("R/Tay.R")
 #' given appropriate \eqn{n,q,\varepsilon} and instnatiated with ReLU
 #' activation at point\eqn{x}.
 #'
+#' @references Definition 2.28 in Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
+#' Approximating Functions Using Neural Network Polynomials
+#' \url{https://arxiv.org/abs/2402.01058}
+#'
+#'
 #' @export
 
 Xpn <- function(n, q, eps) {

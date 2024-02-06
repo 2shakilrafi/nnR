@@ -15,11 +15,17 @@ source("R/is_nn.R")
 #'
 #' @references  Grohs, P., Hornung, F., Jentzen, A. et al. Space-time error estimates for deep
 #' neural network approximations for differential equations. Adv Comput Math 49, 4 (2023).
-#' https://doi.org/10.1007/s10444-022-09970-2.
+#' \doi{https://doi.org/10.1007/s10444-022-09970-2}.
 #'
 #' Definition 1.3.4. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).
 #' Mathematical introduction to deep learning: Methods, implementations,
 #' and theory. \url{https://arxiv.org/abs/2310.20360}
+#'
+#' Very precisely we will use the definition in:
+#'
+#' @references Definition 2.3 in Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
+#' Approximating Functions Using Neural Network Polynomials
+#' \url{https://arxiv.org/abs/2402.01058}
 #'
 #' @param activation_function A continuous function applied to the output of each layer
 #' @param x our input to the continuous function formed from activation. Our input will

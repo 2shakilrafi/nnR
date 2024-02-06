@@ -14,9 +14,14 @@ source("R/aux_fun.R")
 #' @return A neural network that approximates the square of a real number.when
 #' provided appropriate \eqn{q,\varepsilon} and upon instantiation with ReLU,
 #' and a real number \eqn{x}
-#' @references  Grohs, P., Hornung, F., Jentzen, A. et al. Space-time error estimates for deep
+#' @references  Proposition 3.4. Grohs, P., Hornung, F., Jentzen, A. et al. Space-time error estimates for deep
 #' neural network approximations for differential equations. Adv Comput Math 49, 4 (2023).
 #' https://doi.org/10.1007/s10444-022-09970-2
+#'
+#' #' @references Definition 2.24. Rafi S., Padgett, J.L., Nakarmi, U. (2024)
+#' Towards an Algebraic Framework For
+#' Approximating Functions Using Neural Network Polynomials
+#' \url{https://arxiv.org/abs/2402.01058}
 #'
 #'
 #' @export

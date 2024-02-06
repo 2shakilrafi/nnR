@@ -16,7 +16,7 @@ on the matrix come from a standard normal distribution. Neural networks
 are defined to be elements belonging to the following set:
 \deqn{
 
-\mathsf{NN} = \bigcup_{L\in \N} \bigcup_{l_0,l_1,...,l_L \in \N}
+\mathsf{NN} = \bigcup_{L\in \N} \bigcup_{l_0,l_1,...,l_L \in \N^{L+1}}
 \left( \times^L_{k=1} \left[ \mathbb{R}^{l_k \times l_{k-1}} \times \R^{l_k}\right]  \right)
 
 
@@ -31,8 +31,14 @@ We will use the definition of neural networks as found in:
 Function to create a list of lists for neural network layers
 }
 \references{
+Definition 2.1 in Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
+Approximating Functions Using Neural Network Polynomials
+\url{https://arxiv.org/abs/2402.01058}
+
+Which in turn is a highly modified version of the one found in:
+
 Grohs, P., Hornung, F., Jentzen, A. et al.
 Space-time error estimates for deep neural network approximations
 for differential equations. Adv Comput Math 49, 4 (2023).
-\url{https://doi.org/10.1007/s10444-022-09970-2}.
+\doi{https://rdcu.be/dxYVV}.
 }

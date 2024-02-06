@@ -22,3 +22,8 @@ real number \eqn{x}.
 \description{
 Tun: The function that returns tunneling neural networks
 }
+\references{
+Definition 2.17. Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
+Approximating Functions Using Neural Network Polynomials
+\url{https://arxiv.org/abs/2402.01058}
+}

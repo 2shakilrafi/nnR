@@ -12,6 +12,12 @@ source("R/Id.R")
 #' \eqn{\bullet^{n-2}\mathsf{Id}_1} for \eqn{n >2}. For this to work we
 #' must provide an appropriate \eqn{n} and instantiate with ReLU at some
 #' real number \eqn{x}.
+#'
+#' @references Definition 2.17. Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
+#' Approximating Functions Using Neural Network Polynomials
+#' \url{https://arxiv.org/abs/2402.01058}
+#'
+#'
 #' @export
 #'
 Tun <- function(n, d = 1) {

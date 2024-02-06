@@ -6,10 +6,10 @@ source("R/Aff.R")
 #' The Phi function
 #'
 #' @param eps parameter for Phi
-#' @references Grohs, P., Hornung, F., Jentzen, A. et al.
-#' Space-time error estimates for deep neural network approximations
-#' for differential equations. Adv Comput Math 49, 4 (2023).
-#' https://doi.org/10.1007/s10444-022-09970-2
+#' @references Definition 2.23. Rafi S., Padgett, J.L., Nakarmi, U. (2024)
+#' Towards an Algebraic Framework For
+#' Approximating Functions Using Neural Network Polynomials
+#' \url{https://arxiv.org/abs/2402.01058}
 #'
 #' @return neural network Phi that approximately squares a number between
 #' 0 and 1.

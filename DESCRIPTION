@@ -1,6 +1,6 @@
 Package: nnR
 Type: Package
-Title: nnR: Neural Networks Made Algebraic
+Title: Neural Networks Made Algebraic
 Version: 0.1.0
 Author: Shakil Rafi
 Maintainer: Shakil Rafi <sarafi@uark.edu>

@@ -24,3 +24,8 @@ with ReLU activation. See also \code{\link{Sne}}.
 \description{
 The function that returns \eqn{\mathsf{Csn}}.
 }
+\references{
+Definition 2.29 in Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
+Approximating Functions Using Neural Network Polynomials
+\url{https://arxiv.org/abs/2402.01058}
+}

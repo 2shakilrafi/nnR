@@ -21,7 +21,12 @@ and a real number \eqn{x}
 A function that returns the \eqn{\mathsf{Sqr}} neural networks.
 }
 \references{
-Grohs, P., Hornung, F., Jentzen, A. et al. Space-time error estimates for deep
+Proposition 3.4. Grohs, P., Hornung, F., Jentzen, A. et al. Space-time error estimates for deep
 neural network approximations for differential equations. Adv Comput Math 49, 4 (2023).
 https://doi.org/10.1007/s10444-022-09970-2
+
+#' @references Definition 2.24. Rafi S., Padgett, J.L., Nakarmi, U. (2024)
+Towards an Algebraic Framework For
+Approximating Functions Using Neural Network Polynomials
+\url{https://arxiv.org/abs/2402.01058}
 }

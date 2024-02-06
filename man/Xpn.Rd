@@ -25,3 +25,8 @@ activation at point\eqn{x}.
 \description{
 The Xpn function
 }
+\references{
+Definition 2.28 in Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
+Approximating Functions Using Neural Network Polynomials
+\url{https://arxiv.org/abs/2402.01058}
+}

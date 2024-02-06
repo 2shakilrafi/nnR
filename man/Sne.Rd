@@ -25,3 +25,8 @@ activation and given value \eqn{x}.
 \description{
 Returns the \eqn{\mathsf{Sne}} neural networks
 }
+\references{
+Definition 2.30. Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
+Approximating Functions Using Neural Network Polynomials
+\url{https://arxiv.org/abs/2402.01058}
+}

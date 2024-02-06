@@ -23,15 +23,15 @@ source("R/is_nn.R")
 #' (W'_{M-1}, b'_{M-1})(W_1, b'_M + b_1)) &:(L=1) \land (M>1) \\ ((W_1W'_1, W_1b'_1+b_1)) &:(L=1)
 #' \land (M=1)\end{cases}
 #'
-
 #' }
 #'
 #'
 #' @references Grohs, P., Hornung, F., Jentzen, A. et al.
 #' Space-time error estimates for deep neural network approximations
 #' for differential equations. Adv Comput Math 49, 4 (2023).
-#' \url{https://doi.org/10.1007/s10444-022-09970-2}.
+#' \url{https://rdcu.be/dxYVV}
 #'
+#'Specifically:
 #' @references Definition 2.1.1. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).
 #' Mathematical introduction to deep learning: Methods, implementations,
 #' and theory. \url{https://arxiv.org/abs/2310.20360}

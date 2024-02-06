@@ -65,10 +65,10 @@ c(1, 1, 1, 1) |> matrix(4, 1) -> A
 #' @param k an integer \eqn{k \in (2,\infty)}
 #'
 #' @return The Phi_k neural network
-#' @references Grohs, P., Hornung, F., Jentzen, A. et al.
-#' Space-time error estimates for deep neural network approximations
-#' for differential equations. Adv Comput Math 49, 4 (2023).
-#' https://doi.org/10.1007/s10444-022-09970-2
+#' @references Definition 2.22. Rafi S., Padgett, J.L., Nakarmi, U. (2024)
+#' Towards an Algebraic Framework For
+#' Approximating Functions Using Neural Network Polynomials
+#' \url{https://arxiv.org/abs/2402.01058}
 #'
 Phi_k <- function(k) {
   if (k |> is.numeric() &&
