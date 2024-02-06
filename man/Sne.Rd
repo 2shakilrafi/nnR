@@ -18,7 +18,7 @@ Sne(n, q, eps)
 "too long a vector", atleaast as tested on my computer.}
 }
 \value{
-a neural network that approximates \eqn{\sin} when given
+A neural network that approximates \eqn{\sin} when given
 an appropriate \eqn{n,q,\varepsilon} and instantiated with ReLU
 activation and given value \eqn{x}.
 }

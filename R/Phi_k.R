@@ -4,21 +4,16 @@ source("R/i.R")
 source("R/aux_fun.R")
 source("R/activations.R")
 
-#' The c_k function
-#'
-#' @param k an integer in \eqn{[1,\infty)}
-#'
-#' @return the real number \eqn{2^{1-2k}}
-#' @references Grohs, P., Hornung, F., Jentzen, A. et al.
-#' Space-time error estimates for deep neural network approximations
-#' for differential equations. Adv Comput Math 49, 4 (2023).
-#' https://doi.org/10.1007/s10444-022-09970-2
-#'
-#' @references Definition 2.3.4. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).
-#' Mathematical introduction to deep learning: Methods, implementations,
-#' and theory. \url{https://arxiv.org/abs/2310.20360}.
 
-c_k <- function(k) {
+
+#' The ck function
+#'
+#' @param k input value
+
+#'
+#' @return the ck function
+
+ck <- function(k) {
   2^{
     1 - 2 * k
   } -> result
@@ -38,7 +33,7 @@ c(0, -1 / 2, -1, 0) |> matrix() -> B
 #' \eqn{[0,1]}
 
 C_k <- function(k) {
-  c(-c_k(k), 2 * c_k(k), -c_k(k), 1) |> matrix(1, 4) -> result
+  c(-ck(k), 2 * ck(k), -ck(k), 1) |> matrix(1, 4) -> result
   return(result)
 }
 
@@ -52,9 +47,9 @@ C_k <- function(k) {
 #' \eqn{[0,1]}
 #'
 A_k <- function(k) {
-  c(2, 2, 2, -c_k(k)) |>
-    c(-4, -4, -4, 2 * c_k(k)) |>
-    c(2, 2, 2, -c_k(k)) |>
+  c(2, 2, 2, -ck(k)) |>
+    c(-4, -4, -4, 2 * ck(k)) |>
+    c(2, 2, 2, -ck(k)) |>
     c(0, 0, 0, 1) |>
     matrix(4, 4) -> result
   return(result)
