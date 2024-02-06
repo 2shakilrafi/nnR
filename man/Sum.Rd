@@ -25,7 +25,7 @@ These are neural networks defined as such
 }
 }
 \references{
-Definition 2.4.1. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).
-Mathematical introduction to deep learning: Methods, implementations,
-and theory. \url{https://arxiv.org/abs/2310.20360}
+Definition 2.10. Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
+Approximating Functions Using Neural Network Polynomials
+\url{https://arxiv.org/abs/2402.01058}
 }

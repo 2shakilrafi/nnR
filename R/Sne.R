@@ -15,6 +15,13 @@ source("R/Tay.R")
 #' @return A neural network that approximates \eqn{\sin} when given
 #' an appropriate \eqn{n,q,\varepsilon} and instantiated with ReLU
 #' activation and given value \eqn{x}.
+#'
+#' @references Definition 2.30. Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
+#' Approximating Functions Using Neural Network Polynomials
+#' \url{https://arxiv.org/abs/2402.01058}
+#'
+#'
+#'
 #' @export
 
 Sne <- function(n, q, eps) {

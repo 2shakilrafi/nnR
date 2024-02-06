@@ -6,13 +6,17 @@
 #' @param b An \eqn{m \times 1} vector representing the bias of the affine
 #' neural network
 #'
-#' @references  Grohs, P., Hornung, F., Jentzen, A. et al. Space-time error estimates for deep
-#' neural network approximations for differential equations. Adv Comput Math 49, 4 (2023).
-#' https://doi.org/10.1007/s10444-022-09970-2
+#' @references
 #'
 #' Definition 2.3.1. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).
 #' Mathematical introduction to deep learning: Methods, implementations,
 #' and theory. \url{https://arxiv.org/abs/2310.20360}
+#'
+#' And especially:
+#'
+#' Definition 2.8. Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
+#' Approximating Functions Using Neural Network Polynomials
+#' \url{https://arxiv.org/abs/2402.01058}
 #'
 #' @return Returns the network \eqn{((W,b))} representing an affine neural network. Also
 #' denoted as \eqn{\mathsf{Aff}_{W,b}}
@@ -39,9 +43,10 @@ Aff <- function(W, b) {
 #' @return Returns an affine network that makes a concatenated vector that is \eqn{n}
 #' copies of the input vector of size \eqn{k}. See \code{\link{Aff}} and \code{\link{Sum}}.
 #'
-#' @references Definition 2.4.6. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).
-#' Mathematical introduction to deep learning: Methods, implementations,
-#' and theory. \url{https://arxiv.org/abs/2310.20360}
+#' @references Definition 2.9. Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an
+#' Algebraic Framework For
+#' Approximating Functions Using Neural Network Polynomials
+#' \url{https://arxiv.org/abs/2402.01058}
 #'
 #'
 #' @export
@@ -78,9 +83,9 @@ Cpy <- function(n, k) {
 #' \eqn{n \times k} and return the summation vector that is of length
 #' \eqn{k}. See also \code{\link{Aff}} and \code{\link{Cpy}}.
 #'
-#' @references Definition 2.4.1. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).
-#' Mathematical introduction to deep learning: Methods, implementations,
-#' and theory. \url{https://arxiv.org/abs/2310.20360}
+#' @references Definition 2.10. Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
+#' Approximating Functions Using Neural Network Polynomials
+#' \url{https://arxiv.org/abs/2402.01058}
 #'
 #'
 #' @export

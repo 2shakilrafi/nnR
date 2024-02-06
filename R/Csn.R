@@ -13,6 +13,12 @@ source("R/Tay.R")
 #'
 #' @return A neural network that approximates \eqn{\cos} under instantiation
 #' with ReLU activation. See also \code{\link{Sne}}.
+#'
+#' @references Definition 2.29 in Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
+#' Approximating Functions Using Neural Network Polynomials
+#' \url{https://arxiv.org/abs/2402.01058}
+#'
+#'
 #' @export
 
 Csn <- function(n, q, eps) {

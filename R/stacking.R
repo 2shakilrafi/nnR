@@ -47,7 +47,7 @@ create_block_diagonal <- function(matrix1, matrix2) {
 #' operation is not quite commutative. It is commutative up to transposition
 #' of our input x under instantiation with a continuous activation function.
 #'
-#' Also the work parallelization has a lot of baggage when it comes to
+#' Also the word parallelization has a lot of baggage when it comes to
 #' artificial neural networks in that it often means many different CPUs working
 #' together.
 #'
@@ -62,6 +62,13 @@ create_block_diagonal <- function(matrix1, matrix2) {
 #' @references  Grohs, P., Hornung, F., Jentzen, A. et al. Space-time error estimates for deep
 #' neural network approximations for differential equations. Adv Comput Math 49, 4 (2023).
 #' https://doi.org/10.1007/s10444-022-09970-2
+#'
+#' And especially in:
+#'
+#' @references#' Definition 2.14 in Rafi S., Padgett, J.L., Nakarmi, U. (2024)
+#' Towards an Algebraic Framework For
+#' Approximating Functions Using Neural Network Polynomials
+#' \url{https://arxiv.org/abs/2402.01058}
 #'
 #' @export
 
