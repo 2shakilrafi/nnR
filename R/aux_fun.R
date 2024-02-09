@@ -23,6 +23,8 @@ hid <- function(nu) {
   }
 }
 
+
+
 #' @title dep
 #' @description The function that returns the depth of a neural network. Denoted
 #' \eqn{\mathsf{D}}.
@@ -45,6 +47,8 @@ dep <- function(nu) {
     stop("Only neural networks can have depth")
   }
 }
+
+
 
 #' @title inn
 #' @description The function that returns the input layer size of a neural
@@ -69,6 +73,7 @@ inn <- function(nu) {
 }
 
 
+
 #' @title out
 #' @description The function that returns the output layer size of a neural
 #' network. Denoted \eqn{\mathsf{O}}.
@@ -91,6 +96,7 @@ out <- function(nu) {
 }
 
 
+
 #' @title lay
 #' @description The function that returns the layer architecture of a neural
 #' network.
@@ -105,18 +111,17 @@ out <- function(nu) {
 #' @return A tuple representing the layer architecture of our neural network.
 #' @export
 
+
 lay <- function(nu) {
-  if (nu |> is_nn() == TRUE) {
-    layer_architecture <- list()
-    for (i in 1:length(nu)) {
-      layer_architecture |> append(dim(nu[[i]]$W)[1]) -> layer_architecture
-    }
-    inn(nu) |> append(layer_architecture) -> layer_architecture
+  if (is_nn(nu)) {
+    layer_architecture <- sapply(nu, function(x) dim(x$W)[1])
+    layer_architecture <- c(layer_architecture, inn(nu))
     return(layer_architecture)
   } else {
     stop("Only neural networks can have layer architectures")
   }
 }
+
 
 
 #' @title param
@@ -134,13 +139,13 @@ lay <- function(nu) {
 #' @export
 
 param <- function(nu) {
-  if (nu |> is_nn() == TRUE) {
-    0 -> param_count
-    for (i in 1:length(nu)) {
-      param_count + length(nu[[i]]$W) + length(nu[[i]]$b) -> param_count
-    }
+  if (is_nn(nu)) {
+    param_count <- sum(sapply(nu, function(x) length(x$W) + length(x$b)))
     return(param_count)
   } else {
     stop("Only neural networks can have parameters")
   }
 }
+
+
+

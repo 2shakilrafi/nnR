@@ -100,3 +100,5 @@ Phi_k <- function(k) {
     stop("k must a natural number")
   }
 }
+
+Vectorize(Phi_k) -> Phi_k

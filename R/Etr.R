@@ -5,6 +5,13 @@
 #'
 #' @return The \eqn{\mathsf{Trp}} network that gives the area
 #' when activated with ReLU and two meshpoint values x_1 and x_2.
+#'
+#' @references Definition 2.31. Rafi S., Padgett, J.L., Nakarmi, U. (2024)
+#' Towards an Algebraic Framework For
+#' Approximating Functions Using Neural Network Polynomials
+#' \url{https://arxiv.org/abs/2402.01058}
+#'
+#'
 #' @export
 
 Trp <- function(h) {
@@ -34,9 +41,14 @@ Trp <- function(h) {
 #' of the function being approximated at the \eqn{n+1} meshpoints which are
 #' the legs of the \eqn{n} triangles as stipulated in the input parameters.
 #'
+#' @references Definition 2.33. Rafi S., Padgett, J.L., Nakarmi, U. (2024)
+#' Towards an Algebraic Framework For
+#' Approximating Functions Using Neural Network Polynomials
+#' \url{https://arxiv.org/abs/2402.01058}
+#'
 #' @param h width of trapezoids
 #'
-#' @return an approximation for area of the integral
+#' @return an approximation for value of the integral.
 #' @export
 
 Etr <- function(n, h) {

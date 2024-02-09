@@ -30,3 +30,5 @@ Xpn <- function(n, q, eps) {
     return(Tay("exp", n, q, eps))
   }
 }
+
+Vectorize(Xpn) -> Xpn

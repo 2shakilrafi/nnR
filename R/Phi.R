@@ -48,3 +48,5 @@ Phi <- function(eps) {
     stop("eps must be a positive real number")
   }
 }
+
+Vectorize(Phi) -> Phi

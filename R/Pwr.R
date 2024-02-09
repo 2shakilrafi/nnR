@@ -15,16 +15,16 @@ source("R/aux_fun.R")
 #' a non-negative integer.
 #'
 #' @return A neural network that approximates raising a number to exponent, when
-#' given appropriate \eqn{q,\varepsilon} and exponent when isntanatiated
+#' given appropriate \eqn{q,\varepsilon} and exponent when instantiated
 #' under ReLU activation at \eqn{x}.
 #' @export
 
 
 Pwr <- function(q, eps, exponent) {
   if (q <= 2) {
-    stop("Too small q, q must be >= 2")
+    stop("Too small q, q must be > 2")
   } else if (eps <= 0) {
-    stop("Too small eps, eps must be >= 0")
+    stop("Too small eps, eps must be > 0")
   } else if (exponent %% 1 != 0 || exponent < 0) {
     stop("Exponent must be a non-negative integer")
   } else {
@@ -44,3 +44,5 @@ Pwr <- function(q, eps, exponent) {
     return(return_network)
   }
 }
+
+Vectorize(Pwr) -> Pwr

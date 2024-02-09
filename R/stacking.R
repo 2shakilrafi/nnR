@@ -59,9 +59,10 @@ create_block_diagonal <- function(matrix1, matrix2) {
 #' \emph{Remark:} We have two versions, a prefix and an infix version.
 #'
 #' This operation on neural networks, called "parallelization" is found in:
+#'
 #' @references  Grohs, P., Hornung, F., Jentzen, A. et al. Space-time error estimates for deep
-#' neural network approximations for differential equations. Adv Comput Math 49, 4 (2023).
-#' https://doi.org/10.1007/s10444-022-09970-2
+#' neural network approximations for differential equations. (2023).
+#' \url{https://arxiv.org/abs/1908.03833}
 #'
 #' And especially in:
 #'
@@ -101,6 +102,8 @@ stk <- function(nu, mu) {
     stop("Please try stacking neural networks")
   }
 }
+
+
 
 #' The stk function.
 #'

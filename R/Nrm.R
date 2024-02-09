@@ -14,20 +14,13 @@ source("R/nn_sum.R")
 #' @param d the dimensions of the vector being normed.
 #'
 #' @return a neural network that takes the 1-norm of a vector of
-#' size d.under ReLU activation. This is the neural network that is:
-#' \deqn{
-#' \mathsf{Nrm}^1_1 = \left( \left( \begin{bmatrix} 1 \\ -1\end{bmatrix},
-#' \begin{bmatrix} 0 \\ 0 \end{bmatrix}\right), \left( \begin{bmatrix}1 && 1\end{bmatrix},
-#' \begin{bmatrix}0\end{bmatrix}\right) \right) \in \left( \mathbb{R}^{2 \times 1} \times
-#' \mathbb{R}^2 \right) \times \left( \mathbb{R}^{1 \times 2} \times \mathbb{R}^1 \right) \quad d=1 \\
-#' \mathsf{Nrm}_1^d = \mathsf{Sum}_{d,1} \bullet \left[ \boxminus_{i=1}^d \mathsf{Nrm}_1^1 \right] \quad d>1
+#' size d.under ReLU activation.
 
-#' }
-#'
-#'
 #'
 #' \emph{Note:} This function is split into two cases
 #' much like the definition itself.
+#'
+#' For a specific definition, see:
 #'
 #' @references Lemma 4.2.1. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).
 #' Mathematical introduction to deep learning: Methods, implementations,

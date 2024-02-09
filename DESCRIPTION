@@ -4,7 +4,11 @@ Title: Neural Networks Made Algebraic
 Version: 0.1.0
 Author: Shakil Rafi
 Maintainer: Shakil Rafi <sarafi@uark.edu>
-Description: Do algebraic operations on neural networks. 
+Description: Do algebraic operations on neural networks. We seek here to implement
+  in R, operations on neural networks and their resulting approximations. Our implementation
+  is meant mainly as a pedagogical tool, and proof of concept. Faster implementations with 
+  deeper vectorizations may be made in future versions. 
+  Our definitions derive mainly from the following -
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

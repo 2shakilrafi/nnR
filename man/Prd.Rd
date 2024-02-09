@@ -23,9 +23,9 @@ approximates the product of two real numbers when given an appropriate
 activation.
 }
 \references{
-Grohs, P., Hornung, F., Jentzen, A. et al. Space-time error estimates for deep
-neural network approximations for differential equations. Adv Comput Math 49, 4 (2023).
-https://doi.org/10.1007/s10444-022-09970-2
+Proposition 3.5. Grohs, P., Hornung, F., Jentzen, A. et al. Space-time error estimates for deep
+neural network approximations for differential equations. (2019).
+\url{https://arxiv.org/abs/1908.03833}
 
 Definition 2.25. Rafi S., Padgett, J.L., Nakarmi, U. (2024)
 Towards an Algebraic Framework For

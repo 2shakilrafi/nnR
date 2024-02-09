@@ -20,8 +20,14 @@ the legs of the \eqn{n} triangles as stipulated in the input parameters.}
 \item{h}{width of trapezoids}
 }
 \value{
-an approximation for area of the integral
+an approximation for value of the integral.
 }
 \description{
 The function that returns the \eqn{\mathsf{Etr}} networks.
+}
+\references{
+Definition 2.33. Rafi S., Padgett, J.L., Nakarmi, U. (2024)
+Towards an Algebraic Framework For
+Approximating Functions Using Neural Network Polynomials
+\url{https://arxiv.org/abs/2402.01058}
 }

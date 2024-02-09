@@ -16,7 +16,7 @@ a non-negative integer.}
 }
 \value{
 A neural network that approximates raising a number to exponent, when
-given appropriate \eqn{q,\varepsilon} and exponent when isntanatiated
+given appropriate \eqn{q,\varepsilon} and exponent when instantiated
 under ReLU activation at \eqn{x}.
 }
 \description{

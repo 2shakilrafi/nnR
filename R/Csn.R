@@ -31,3 +31,5 @@ Csn <- function(n, q, eps) {
     return(return_network)
   }
 }
+
+Vectorize(Csn) -> Csn

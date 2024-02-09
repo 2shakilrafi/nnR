@@ -63,10 +63,12 @@ Cpy <- function(n, k) {
       W |> rbind(k |> diag()) -> W
     }
     0 |> matrix(n * k) -> b
-    list(list(W = W, b = b)) -> return_network
+    Aff(W,b) -> return_network
     return(return_network)
   }
 }
+
+Vectorize(Cpy) -> Cpy
 
 #' @title Sum
 #' @description The function that returns \eqn{\mathsf{Sum}} neural networks.
@@ -104,7 +106,7 @@ Sum <- function(n, k) {
       W |> cbind(k |> diag()) -> W
     }
     0 |> matrix(k) -> b
-    list(list(W = W, b = b)) -> return_network
+    Aff(W,b) -> return_network
 
     return(return_network)
   }

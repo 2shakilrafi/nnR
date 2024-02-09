@@ -15,8 +15,8 @@ source("R/aux_fun.R")
 #' provided appropriate \eqn{q,\varepsilon} and upon instantiation with ReLU,
 #' and a real number \eqn{x}
 #' @references  Proposition 3.4. Grohs, P., Hornung, F., Jentzen, A. et al. Space-time error estimates for deep
-#' neural network approximations for differential equations. Adv Comput Math 49, 4 (2023).
-#' https://doi.org/10.1007/s10444-022-09970-2
+#' neural network approximations for differential equations. (2019).
+#' \url{https://arxiv.org/abs/1908.03833}
 #'
 #' #' @references Definition 2.24. Rafi S., Padgett, J.L., Nakarmi, U. (2024)
 #' Towards an Algebraic Framework For
@@ -50,3 +50,5 @@ Sqr <- function(q, eps) {
     return(return_network)
   }
 }
+
+Vectorize(Sqr) -> Sqr

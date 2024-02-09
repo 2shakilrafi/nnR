@@ -18,9 +18,9 @@ source("R/scalar_mult.R")
 #' returns \eqn{xy} when instantiated with ReLU activation, and given a list
 #' c(x,y), the two numbers to be multiplied.
 #'
-#' @references  Grohs, P., Hornung, F., Jentzen, A. et al. Space-time error estimates for deep
-#' neural network approximations for differential equations. Adv Comput Math 49, 4 (2023).
-#' https://doi.org/10.1007/s10444-022-09970-2
+#' @references  Proposition 3.5. Grohs, P., Hornung, F., Jentzen, A. et al. Space-time error estimates for deep
+#' neural network approximations for differential equations. (2019).
+#' \url{https://arxiv.org/abs/1908.03833}
 #'
 #' @references Definition 2.25. Rafi S., Padgett, J.L., Nakarmi, U. (2024)
 #' Towards an Algebraic Framework For
@@ -46,3 +46,5 @@ Prd <- function(q, eps) {
     return(return_network)
   }
 }
+
+Vectorize(Prd) -> Prd

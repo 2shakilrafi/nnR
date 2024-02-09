@@ -45,8 +45,8 @@ A function that stacks neural networks.
 }
 \references{
 Grohs, P., Hornung, F., Jentzen, A. et al. Space-time error estimates for deep
-neural network approximations for differential equations. Adv Comput Math 49, 4 (2023).
-https://doi.org/10.1007/s10444-022-09970-2
+neural network approximations for differential equations. (2023).
+\url{https://arxiv.org/abs/1908.03833}
 
 And especially in:
 

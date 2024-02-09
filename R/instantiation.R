@@ -14,8 +14,8 @@ source("R/is_nn.R")
 #' \emph{NOTE:} We will call istantiation what Grohs et. al. call "realization".
 #'
 #' @references  Grohs, P., Hornung, F., Jentzen, A. et al. Space-time error estimates for deep
-#' neural network approximations for differential equations. Adv Comput Math 49, 4 (2023).
-#' \doi{https://doi.org/10.1007/s10444-022-09970-2}.
+#' neural network approximations for differential equations. (2019).
+#' \url{https://arxiv.org/abs/1908.03833}.
 #'
 #' Definition 1.3.4. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).
 #' Mathematical introduction to deep learning: Methods, implementations,
@@ -37,13 +37,12 @@ source("R/is_nn.R")
 #' @export
 #'
 
-
 inst <- function(neural_network, activation_function, x) {
   if (neural_network |> is_nn() == FALSE) {
     stop("Only neural networks can be instantiated")
   } else if (neural_network |> inn() != x |>
-    matrix() |>
-    nrow()) {
+             matrix() |>
+             nrow()) {
     stop("x does not match input size required by neural network")
   } else {
     if (dep(neural_network) == 1) {
@@ -56,8 +55,8 @@ inst <- function(neural_network, activation_function, x) {
     for (i in 1:(length(neural_network) - 1)) {
       neural_network[[i]]$W %*% output + neural_network[[i]]$b -> linear_transform
       apply(linear_transform,
-        MARGIN = 1,
-        FUN = activation_function
+            MARGIN = 1,
+            FUN = activation_function
       ) -> output
     }
     neural_network[[length(neural_network)]]$W %*% output +

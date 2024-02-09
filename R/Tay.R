@@ -52,3 +52,5 @@ Tay <- function(f, n, q, eps) {
     }
   }
 }
+
+Vectorize(Tay) -> Tay

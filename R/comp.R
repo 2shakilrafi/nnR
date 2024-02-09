@@ -12,26 +12,9 @@ source("R/is_nn.R")
 #' @param phi_2 second neural network to be composed, goes on right
 #'
 #' @return The composed neural network. See also \code{\link{dep}}.
-#' Composition of neural networks is the operation defined for \eqn{\nu_1 \in \mathsf{NN}}
-#' and \eqn{\nu_2 \in \mathsf{NN}} as:
-#'
-#' \deqn{
-#' \nu_1 \bullet \nu_2 = \begin{cases} (( W'_1,b'_1 ),
-#' ( W'_2,b'_2 ), ...,( W'_{M-1}, b'_{M-1}), ( W_1W'_M, W_1b'_{M} + b_1), (W_2, b_2 ),\\...,
-#' ( W_L,b_L )) & :( L> 1 ) \land ( M > 1 ) \\((W_1W'_1,W_1b'_1+b_1),(W_2,b_2), (W_3,b_3),...,
-#' (W_Lb_L)) & :(L>1) \land (M=1) \\((W'_1, b'_1),(W'_2,b'_2), ...,
-#' (W'_{M-1}, b'_{M-1})(W_1, b'_M + b_1)) &:(L=1) \land (M>1) \\ ((W_1W'_1, W_1b'_1+b_1)) &:(L=1)
-#' \land (M=1)\end{cases}
-#'
-#' }
 #'
 #'
-#' @references Grohs, P., Hornung, F., Jentzen, A. et al.
-#' Space-time error estimates for deep neural network approximations
-#' for differential equations. Adv Comput Math 49, 4 (2023).
-#' \url{https://rdcu.be/dxYVV}
-#'
-#'Specifically:
+#' Our definition derive specifically from:
 #' @references Definition 2.1.1. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).
 #' Mathematical introduction to deep learning: Methods, implementations,
 #' and theory. \url{https://arxiv.org/abs/2310.20360}
@@ -104,6 +87,8 @@ comp <- function(phi_1, phi_2) {
     stop("Only neural networks can be composed.")
   }
 }
+
+
 
 #' The `infix version of comp function
 #'

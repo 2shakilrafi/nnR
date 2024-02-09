@@ -4,6 +4,10 @@
 #' @param d the size of the \eqn{\mathsf{i}} network
 #'
 #' @return returns the i_d network
+#'
+#' @references Definition 2.2.6. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).
+#' Mathematical introduction to deep learning: Methods, implementations,
+#' and theory. \url{https://arxiv.org/abs/2310.20360}
 
 i <- function(d) {
   list() -> return_network

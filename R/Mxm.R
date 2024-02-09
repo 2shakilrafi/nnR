@@ -6,21 +6,7 @@ source("R/Id.R")
 
 #' @title Mxm
 #' @description The function that returns the \eqn{\mathsf{Mxm}} neural networks.
-#' These are neural networks of the type:
-#' \deqn{
-#'\mathsf{Mxm}^1 = \mathsf{Aff}_{1,0} \quad d = 1 \\
-#'\\
-#'\mathsf{Mxm}^2 = \left( \left( \begin{bmatrix} 1 & -1 \\ 0 & 1 \\ 0 & -1\end{bmatrix},
-#'\begin{bmatrix} 0 \\ 0 \\0\end{bmatrix}\right), \left( \begin{bmatrix}1&1&-1\end{bmatrix},
-#'\begin{bmatrix}0\end{bmatrix}\right)\right) \quad d = 2 \\
-#'\\
-#'\mathsf{Mxm}^{2d} = \mathsf{Mxm}^d \bullet \left[ \boxminus_{i=1}^d \mathsf{Mxm}^2\right] \quad d > 2\\
-#'\mathsf{Mxm}^{2d-1} = \mathsf{Mxm}^d \bullet \left[ \left( \boxminus^d_{i=1} \mathsf{Mxm}^2 \right)
-#'\boxminus \mathsf{Id}_1\right] \quad d > 2
 #'
-#'}
-#'
-
 #' \emph{Note:} Because of certain quirks of R we will have split
 #' into five cases. We add an extra case for \eqn{d = 3}. Unlike the paper
 #' we will simply reverse engineer the appropriate \emph{d}.
@@ -30,6 +16,7 @@ source("R/Id.R")
 #' @return The neural network that will ouput the maximum of a vector of
 #' size \eqn{d} when activated with the ReLU function.
 #'
+#' For a specific definition, see:
 #' @references Lemma 4.2.4. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).
 #' Mathematical introduction to deep learning: Methods, implementations,
 #' and theory. \url{https://arxiv.org/abs/2310.20360}

@@ -58,3 +58,5 @@ Tun <- function(n, d = 1) {
     stop("Unknown error")
   }
 }
+
+Vectorize(Tun) -> Tun

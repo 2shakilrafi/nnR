@@ -15,6 +15,8 @@ ReLU <- function(x) {
   }
 }
 
+Vectorize(ReLU) -> ReLU
+
 #' @title: Sigmoid
 #' @description The Sigmoid activation function.
 #'

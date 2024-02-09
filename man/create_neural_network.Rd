@@ -12,18 +12,7 @@ create_neural_network(layer_architecture)
 \value{
 An ordered list of ordered pairs of \eqn{(W,b)}. Where \eqn{W} is the matrix
 representing the weight matrix at that layer and \eqn{b} the bias vector. Entries
-on the matrix come from a standard normal distribution. Neural networks
-are defined to be elements belonging to the following set:
-\deqn{
-
-\mathsf{NN} = \bigcup_{L\in \N} \bigcup_{l_0,l_1,...,l_L \in \N^{L+1}}
-\left( \times^L_{k=1} \left[ \mathbb{R}^{l_k \times l_{k-1}} \times \R^{l_k}\right]  \right)
-
-
-}
-
-
-
+on the matrix come from a standard normal distribution.
 
 We will use the definition of neural networks as found in:
 }
@@ -35,10 +24,10 @@ Definition 2.1 in Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebrai
 Approximating Functions Using Neural Network Polynomials
 \url{https://arxiv.org/abs/2402.01058}
 
-Which in turn is a highly modified version of the one found in:
+Which in turn is a modified version of the one found in:
 
-Grohs, P., Hornung, F., Jentzen, A. et al.
+Definition 2.3. Grohs, P., Hornung, F., Jentzen, A. et al.
 Space-time error estimates for deep neural network approximations
-for differential equations. Adv Comput Math 49, 4 (2023).
-\doi{https://rdcu.be/dxYVV}.
+for differential equations. (2019).
+\url{https://arxiv.org/abs/1908.03833}.
 }
