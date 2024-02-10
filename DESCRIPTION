@@ -1,6 +1,6 @@
 Package: nnR
 Type: Package
-Title: Neural Networks Made Algebraic
+Title: "Neural Networks Made Algebraic"
 Version: 0.1.0
 Authors@R: person("Shakil", "Rafi", email = "sarafi@uark.edu", role = c("aut","cre"), comment = c(ORCID = "0000-0003-3791-9697"))
 Maintainer: Shakil Rafi <sarafi@uark.edu>
