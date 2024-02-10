@@ -14,9 +14,13 @@ source("R/scalar_mult.R")
 #' @param q A real number within \eqn{(2,\infty)}
 #' @param eps A real number within \eqn{(0,\infty)}
 #'
+#'
+#'
 #' @return A neural network that takes in \eqn{x} and \eqn{y} and approximately
 #' returns \eqn{xy} when instantiated with ReLU activation, and given a list
 #' c(x,y), the two numbers to be multiplied.
+#'
+#' \emph{Note that this must be instantiated with a tuple c(x,y)}
 #'
 #' @references  Proposition 3.5. Grohs, P., Hornung, F., Jentzen, A. et al. Space-time error estimates for deep
 #' neural network approximations for differential equations. (2019).
@@ -26,6 +30,9 @@ source("R/scalar_mult.R")
 #' Towards an Algebraic Framework For
 #' Approximating Functions Using Neural Network Polynomials
 #' \url{https://arxiv.org/abs/2402.01058}
+#'
+#' @examples
+#' Prd(2.1,0.1) |> inst(ReLU,c(4,5)) #This may take some time, please only click once
 #'
 #'
 #' @export

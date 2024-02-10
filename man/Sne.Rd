@@ -25,6 +25,13 @@ activation and given value \eqn{x}.
 \description{
 Returns the \eqn{\mathsf{Sne}} neural networks
 }
+\examples{
+Sne(3,2.1,0.1) #this may take some time, click only once and wait
+
+Sne(3,2.1,0.1) |> inst(ReLU,1.57) #this may take some time, click only once and wait
+
+
+}
 \references{
 Definition 2.30. Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
 Approximating Functions Using Neural Network Polynomials

@@ -13,7 +13,7 @@ generate_random_matrix <- function(rows, cols) {
   return(result)
 }
 
-#' @title create_neural_network
+#' @title create_nn
 #' @description Function to create a list of lists for neural network layers
 #'
 #' @param layer_architecture a list specifying the width of each layer
@@ -23,10 +23,8 @@ generate_random_matrix <- function(rows, cols) {
 #' on the matrix come from a standard normal distribution.
 #'
 #' @examples
-#' library(nnR)
-#' create_neural_network(c(4,3,6,7))
-#'
-#' We will use the definition of neural networks as found in:
+#' create_nn(c(8,7,8))
+#' create_nn()
 #'
 #' @references Definition 2.1 in Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
 #' Approximating Functions Using Neural Network Polynomials
@@ -39,15 +37,15 @@ generate_random_matrix <- function(rows, cols) {
 #' for differential equations. (2019).
 #' \url{https://arxiv.org/abs/1908.03833}.
 #'
-#'
+
 #'
 #' @export
 
-create_neural_network <- function(layer_architecture) {
+create_nn <- function(layer_architecture) {
   if (all(sapply(layer_architecture, function(x) is.numeric(x) && x %% 1 == 0 && x > 0)) == FALSE) {
     stop("Non integer or negative neural network width specified.")
   } else if (layer_architecture |> length() < 2) {
-    stop("Neural network must have atleast two layers.")
+    stop("Neural network must have atleast one layer.")
   } else {
     layer_architecture |> length() -> L
 

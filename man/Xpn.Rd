@@ -25,6 +25,14 @@ activation at point\eqn{x}.
 \description{
 The Xpn function
 }
+\examples{
+Xpn(3,2.1,0.1) #this may take some time
+
+Xpn(3,2.1,0.1) |> inst(ReLU,2) #this may take some time
+
+
+
+}
 \references{
 Definition 2.28 in Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
 Approximating Functions Using Neural Network Polynomials

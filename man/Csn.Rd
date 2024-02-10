@@ -24,6 +24,14 @@ with ReLU activation. See also \code{\link{Sne}}.
 \description{
 The function that returns \eqn{\mathsf{Csn}}.
 }
+\examples{
+Csn(3,2.1,0.1) #this may take some time
+
+Csn(3,2.1,0.1) |> inst(ReLU,1.57)
+
+
+
+}
 \references{
 Definition 2.29 in Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
 Approximating Functions Using Neural Network Polynomials

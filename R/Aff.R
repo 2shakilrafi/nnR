@@ -21,6 +21,12 @@
 #' @return Returns the network \eqn{((W,b))} representing an affine neural network. Also
 #' denoted as \eqn{\mathsf{Aff}_{W,b}}
 #' See also \code{\link{Cpy}} and \code{\link{Sum}}.
+#'
+#' @examples
+#' Aff(4,5)
+#' Aff(c(5,6,7,8,9,10)|>matrix(2,3),5)
+#'
+#'
 #' @export
 
 Aff <- function(W, b) {

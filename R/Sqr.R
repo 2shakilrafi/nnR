@@ -23,6 +23,11 @@ source("R/aux_fun.R")
 #' Approximating Functions Using Neural Network Polynomials
 #' \url{https://arxiv.org/abs/2402.01058}
 #'
+#' @examples
+#' Sqr(2.5,0.1)
+#' Sqr(2.5,0.1) |> inst(ReLU,4)
+#'
+#'
 #'
 #' @export
 

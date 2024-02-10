@@ -14,5 +14,10 @@ The output of the standard ReLU function, i.e. \eqn{\max\{0,x\}}. See also \code
 and \code{\link{Tanh}}.
 }
 \description{
-: The ReLU activation function
+The ReLU activation function
+}
+\examples{
+ReLU(5)
+ReLU(-5)
+
 }

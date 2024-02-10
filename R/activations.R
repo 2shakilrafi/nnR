@@ -1,7 +1,11 @@
 #' @title: ReLU
-#' @description: The ReLU activation function
+#' @description The ReLU activation function
 #'
 #' @param x A real number that is the input to our ReLU function.
+#'
+#' @examples
+#' ReLU(5)
+#' ReLU(-5)
 #'
 #' @return The output of the standard ReLU function, i.e. \eqn{\max\{0,x\}}. See also \code{\link{Sigmoid}}.
 #' and \code{\link{Tanh}}.

@@ -19,6 +19,11 @@ We will use the definition of neural networks as found in:
 \description{
 Function to create a list of lists for neural network layers
 }
+\examples{
+create_nn(c(5,6,7)) |> is_nn()
+
+
+}
 \references{
 Definition 2.1 in Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
 Approximating Functions Using Neural Network Polynomials

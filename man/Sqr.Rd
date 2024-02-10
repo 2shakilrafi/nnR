@@ -20,6 +20,13 @@ and a real number \eqn{x}
 \description{
 A function that returns the \eqn{\mathsf{Sqr}} neural networks.
 }
+\examples{
+Sqr(2.5,0.1)
+Sqr(2.5,0.1) |> inst(ReLU,4)
+
+
+
+}
 \references{
 Proposition 3.4. Grohs, P., Hornung, F., Jentzen, A. et al. Space-time error estimates for deep
 neural network approximations for differential equations. (2019).

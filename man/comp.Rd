@@ -27,6 +27,10 @@ networks assuming they are compatible, i.e., given
 \eqn{\nu_1, \nu_2 \in \mathsf{NN}}, it must be the case that
 \eqn{\mathsf{I}(\nu)_1 = \mathsf{O}(\nu_2)}.
 }
+\examples{
+create_nn(c(5,4,6,7)) \%comp\% create_nn(c(4,1,5))
+create_nn(c(5,4,6,7)) |> comp(create_nn(c(4,1,5)))
+}
 \references{
 Definition 2.1.1. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).
 Mathematical introduction to deep learning: Methods, implementations,

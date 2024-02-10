@@ -20,6 +20,8 @@
 #' for differential equations. (2019).
 #' \url{https://arxiv.org/abs/1908.03833}.
 #'
+#' @examples
+#' create_nn(c(5,6,7)) |> is_nn()
 #'
 #'
 #' @export

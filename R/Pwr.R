@@ -17,6 +17,11 @@ source("R/aux_fun.R")
 #' @return A neural network that approximates raising a number to exponent, when
 #' given appropriate \eqn{q,\varepsilon} and exponent when instantiated
 #' under ReLU activation at \eqn{x}.
+#'
+#' @examples
+#' Pwr(2.1,0.1,2) |> inst(ReLU, 3) #This may take some time, please only click once
+#'
+#'
 #' @export
 
 

@@ -22,6 +22,10 @@ source("R/is_nn.R")
 #' \emph{Remark:} We have two versions of this function, an
 #' infix version for close resemblance to mathematical notation and
 #' prefix version.
+#'
+#' @examples
+#' create_nn(c(5,4,6,7)) %comp% create_nn(c(4,1,5))
+#' create_nn(c(5,4,6,7)) |> comp(create_nn(c(4,1,5)))
 
 #' @encoding utf8
 #' @export

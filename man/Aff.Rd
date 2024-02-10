@@ -21,6 +21,12 @@ See also \code{\link{Cpy}} and \code{\link{Sum}}.
 \description{
 The function that returns \eqn{\mathsf{Aff}} neural networks.
 }
+\examples{
+Aff(4,5)
+Aff(c(5,6,7,8,9,10)|>matrix(2,3),5)
+
+
+}
 \references{
 Definition 2.3.1. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).
 Mathematical introduction to deep learning: Methods, implementations,

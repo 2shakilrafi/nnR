@@ -22,3 +22,8 @@ under ReLU activation at \eqn{x}.
 \description{
 A function that returns the \eqn{\mathsf{Pwr}} neural networks.
 }
+\examples{
+Pwr(2.1,0.1,2) |> inst(ReLU, 3)
+
+
+}
