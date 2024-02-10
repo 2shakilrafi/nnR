@@ -2,15 +2,20 @@ Package: nnR
 Type: Package
 Title: Neural Networks Made Algebraic
 Version: 0.1.0
-Author: Shakil Rafi
+Authors@R: person("Shakil", "Rafi", email = "sarafi@uark.edu", role = c("aut","cre"), comment = c(ORCID = "0000-0003-3791-9697"))
 Maintainer: Shakil Rafi <sarafi@uark.edu>
 Description: Do algebraic operations on neural networks. We seek here to implement
-  in R, operations on neural networks and their resulting approximations. Our implementation
-  is meant mainly as a pedagogical tool, and proof of concept. Faster implementations with 
+  in R, operations on neural networks and their resulting approximations. Our operations derives
+  its descriptions mainly from 
+  Rafi S., Padgett, J.L., and Nakarmi, U. (2024) <doi:10.48550/arXiv.2402.01058> 
+  Grohs P., Hornung, F., Jentzen, A. et al. (2023) <doi:10.1007/s10444-022-09970-2>
+  Jentzen A., Kuckuck B., von Qurstemberger, P. (2023) <doi:10.48550/arXiv.2310.20360>
+  Our implementation is meant mainly as a pedagogical tool, and proof of concept. Faster implementations with 
   deeper vectorizations may be made in future versions. 
-  Our definitions derive mainly from the following -
+  Our definitions derive mainly from the following.
 License: GPL-3
 Encoding: UTF-8
+Depends: R (>= 4.1.0)
 LazyData: true
 RoxygenNote: 7.3.0
 Suggests: 

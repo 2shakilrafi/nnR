@@ -13,11 +13,16 @@ create_neural_network(layer_architecture)
 An ordered list of ordered pairs of \eqn{(W,b)}. Where \eqn{W} is the matrix
 representing the weight matrix at that layer and \eqn{b} the bias vector. Entries
 on the matrix come from a standard normal distribution.
-
-We will use the definition of neural networks as found in:
 }
 \description{
 Function to create a list of lists for neural network layers
+}
+\examples{
+library(nnR)
+create_neural_network(c(4,3,6,7))
+
+We will use the definition of neural networks as found in:
+
 }
 \references{
 Definition 2.1 in Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For

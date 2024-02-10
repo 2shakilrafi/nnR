@@ -22,6 +22,10 @@ generate_random_matrix <- function(rows, cols) {
 #' representing the weight matrix at that layer and \eqn{b} the bias vector. Entries
 #' on the matrix come from a standard normal distribution.
 #'
+#' @examples
+#' library(nnR)
+#' create_neural_network(c(4,3,6,7))
+#'
 #' We will use the definition of neural networks as found in:
 #'
 #' @references Definition 2.1 in Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
@@ -34,6 +38,9 @@ generate_random_matrix <- function(rows, cols) {
 #' Space-time error estimates for deep neural network approximations
 #' for differential equations. (2019).
 #' \url{https://arxiv.org/abs/1908.03833}.
+#'
+#'
+#'
 #' @export
 
 create_neural_network <- function(layer_architecture) {
