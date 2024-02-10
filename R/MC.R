@@ -11,6 +11,10 @@ source("R/Mxm.R")
 #' of the n sample points
 #' @param L the Lipschitz constant for the function.
 #'
+#' @examples
+#' # example code
+#'
+#'
 #' @references Lemma 4.2.9. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).
 #' Mathematical introduction to deep learning: Methods, implementations,
 #' and theory. \url{https://arxiv.org/abs/2310.20360}.

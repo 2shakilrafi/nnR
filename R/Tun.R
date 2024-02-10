@@ -1,5 +1,6 @@
 source("R/comp.R")
 source("R/Id.R")
+source("R/nn_viewer.R")
 
 #' Tun: The function that returns tunneling neural networks
 #'
@@ -13,9 +14,18 @@ source("R/Id.R")
 #' must provide an appropriate \eqn{n} and instantiate with ReLU at some
 #' real number \eqn{x}.
 #'
+#' @examples
+#' Tun(4)
+#' Tun(4,3) |> view_nn()
+#'
 #' @references Definition 2.17. Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
 #' Approximating Functions Using Neural Network Polynomials
 #' \url{https://arxiv.org/abs/2402.01058}
+#'
+#' @examples
+#' Tun(5)
+#' Tun(5,3)
+#'
 #'
 #'
 #' @export

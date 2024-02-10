@@ -9,14 +9,14 @@ Prd(q, eps)
 \arguments{
 \item{q}{A real number within \eqn{(2,\infty)}}
 
-\item{eps}{A real number within \eqn{(0,\infty)}
-
-Note that this must be instantiated with a tuple c(x,y)}
+\item{eps}{A real number within \eqn{(0,\infty)}}
 }
 \value{
 A neural network that takes in \eqn{x} and \eqn{y} and approximately
 returns \eqn{xy} when instantiated with ReLU activation, and given a list
 c(x,y), the two numbers to be multiplied.
+
+\emph{Note that this must be instantiated with a tuple c(x,y)}
 }
 \description{
 A function that returns the \eqn{\mathsf{Prd}} neural networks that
@@ -25,7 +25,7 @@ approximates the product of two real numbers when given an appropriate
 activation.
 }
 \examples{
-Prd(2.1,0.1) |> inst(ReLU,c(4,5))
+Prd(2.1,0.1) |> inst(ReLU,c(4,5)) #This may take some time, please only click once
 
 
 }

@@ -8,6 +8,7 @@ source("R/is_nn.R")
 #' @param matrix1 A matrix.
 #' @param matrix2 A matrix
 #'
+#'
 #' @return A block diagonal matrix with matrix1 on top left
 #' and matrix2 on bottom right.
 
@@ -50,6 +51,11 @@ create_block_diagonal <- function(matrix1, matrix2) {
 #' Also the word parallelization has a lot of baggage when it comes to
 #' artificial neural networks in that it often means many different CPUs working
 #' together.
+#'
+#' @examples
+#' create_nn(c(4,5,6)) %stk% create_nn(c(6,7))
+#' create_nn(c(9,1,67)) |> stk(create_nn(c(4,4,4,4,4)))
+#'
 #'
 #' \emph{Remark:} We will use only one symbol for stacking equal and unequal depth
 #' neural networks, namely "stk". This is for usability but also that

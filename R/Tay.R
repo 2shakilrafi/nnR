@@ -6,12 +6,20 @@ source("R/Aff.R")
 #' The Tay function
 #'
 #' @param f the function to be Taylor approximated, for now "exp", "sin"
-#' and "cos". NOTE use the quotation marks when using this arguments
+#' and "cos". NOTE use the quotation marks when using this argument.
 #' @param n the extent of Taylor approximations, a natural number
 #' @param q argument for the Pwr networks \eqn{q \in (2,\infty)}
 #' @param eps argument for the Pwr networks \eqn{eps \in (0,\infty)}
 #'
-#' @return a neural network that approximates the function f
+#' @examples
+#' Tay("sin",2,2.1,0.1) |> inst(ReLU,2) #May take some time, please only click once
+#' Tay("cos",2,2.1,0.1) #May take some time, please only click once
+#' Tay("exp",2,2.1,0.1) #May take some time, please only click once
+#'
+#'
+#'
+#' @return a neural network that approximates the function f. For now only
+#' \eqn{sin}, \eqn{cos}, and \eqn{e^x} are available.
 
 Tay <- function(f, n, q, eps) {
   if (n %% 1 != 0 || n < 0) {

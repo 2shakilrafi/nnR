@@ -2,6 +2,12 @@
 #' @description The function that returns the \eqn{\mathsf{Id_1}} networks.
 #' @param d the dimension of the \eqn{Id} network, by default it is \eqn{1}.
 #'
+#' @examples
+#' Id()
+#' Id(3)
+#'
+#'
+#'
 #' @references Definition 2.17. Rafi S., Padgett, J.L., Nakarmi, U. (2024)
 #' Towards an Algebraic Framework For
 #' Approximating Functions Using Neural Network Polynomials

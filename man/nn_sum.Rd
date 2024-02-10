@@ -27,6 +27,12 @@ create_nn().
 
 For a specific definition, see:
 }
+\examples{
+Prd(2.1,0.1) \%nn_sum\% Prd(2.1,0.1)
+Prd(2.1,0.1) |> nn_sum(Prd(2.1,0.1))
+
+
+}
 \references{
 Proposition 2.25. Grohs, P., Hornung, F., Jentzen, A. et al.
 Space-time error estimates for deep neural network approximations

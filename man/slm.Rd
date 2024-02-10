@@ -28,6 +28,15 @@ Let \eqn{\lambda \in \mathbb{R}}. We will denote by \eqn{(\cdot) \triangleright 
 The function that returns the left  scalar multiplication
 neural network
 }
+\examples{
+5 \%slm\% Prd(2.1,0.1)
+Prd(2.1,0.1) \%srm\% 5
+
+5 |> slm(Prd(2.1,0.1))
+Prd(2.1,0.1) |> srm(5)
+
+
+}
 \references{
 Definition 2.3.4. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).
 Mathematical introduction to deep learning: Methods, implementations,

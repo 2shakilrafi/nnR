@@ -8,8 +8,15 @@ source("R/activations.R")
 
 #' The ck function
 #'
-#' @param k input value
-
+#' @param k input value, any real number
+#' @examples
+#' ck(1)
+#' ck(-1)
+#'
+#' @references Definition 2.22. Rafi S., Padgett, J.L., Nakarmi, U. (2024)
+#' Towards an Algebraic Framework For
+#' Approximating Functions Using Neural Network Polynomials
+#' \url{https://arxiv.org/abs/2402.01058}
 #'
 #' @return the ck function
 
@@ -29,8 +36,17 @@ c(0, -1 / 2, -1, 0) |> matrix() -> B
 #' @param k Natural number, the precision with which to approximate squares
 #' within \eqn{[0,1]}
 #'
-#' @return A neural network that approximates the square of any real within
-#' \eqn{[0,1]}
+#' @examples
+#' C_k(5)
+#'
+#' @references Definition 2.22. Rafi S., Padgett, J.L., Nakarmi, U. (2024)
+#' Towards an Algebraic Framework For
+#' Approximating Functions Using Neural Network Polynomials
+#' \url{https://arxiv.org/abs/2402.01058}
+#'
+#' @return An intermediate matrix in a
+#' neural network that approximates the square of any real within
+#' \eqn{[0,1]} upon ReLU instantiation.
 
 C_k <- function(k) {
   c(-ck(k), 2 * ck(k), -ck(k), 1) |> matrix(1, 4) -> result
@@ -43,8 +59,17 @@ C_k <- function(k) {
 #' @param k Natural number, the precision with which to approximate squares
 #' within \eqn{[0,1]}
 #'
-#' @return A neural network that approximates the square of any real within
-#' \eqn{[0,1]}
+#' @references Definition 2.22. Rafi S., Padgett, J.L., Nakarmi, U. (2024)
+#' Towards an Algebraic Framework For
+#' Approximating Functions Using Neural Network Polynomials
+#' \url{https://arxiv.org/abs/2402.01058}
+#'
+#' @examples
+#' A_k(4)
+#' A_k(45)
+#'
+#' @return An intermediate matrix in a neural network that approximates the square of any real within
+#' \eqn{[0,1]} upon ReLU instantiation.
 #'
 A_k <- function(k) {
   c(2, 2, 2, -ck(k)) |>
@@ -57,6 +82,11 @@ A_k <- function(k) {
 
 #' This is an intermediate variable. See the reference
 #'
+#' @references Definition 2.22. Rafi S., Padgett, J.L., Nakarmi, U. (2024)
+#' Towards an Algebraic Framework For
+#' Approximating Functions Using Neural Network Polynomials
+#' \url{https://arxiv.org/abs/2402.01058}
+#'
 c(1, 1, 1, 1) |> matrix(4, 1) -> A
 
 
@@ -65,6 +95,10 @@ c(1, 1, 1, 1) |> matrix(4, 1) -> A
 #' @param k an integer \eqn{k \in (2,\infty)}
 #'
 #' @return The Phi_k neural network
+#' @examples
+#' Phi_k(4) |> view_nn()
+#' Phi_k(5) |> view_nn()
+#'
 #' @references Definition 2.22. Rafi S., Padgett, J.L., Nakarmi, U. (2024)
 #' Towards an Algebraic Framework For
 #' Approximating Functions Using Neural Network Polynomials

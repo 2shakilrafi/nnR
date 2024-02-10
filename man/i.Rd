@@ -15,6 +15,11 @@ returns the i_d network
 \description{
 The function that returns the \eqn{\mathbb{i}} network.
 }
+\examples{
+i(5)
+
+
+}
 \references{
 Definition 2.2.6. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).
 Mathematical introduction to deep learning: Methods, implementations,

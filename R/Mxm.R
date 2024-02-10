@@ -13,6 +13,12 @@ source("R/Id.R")
 #'
 #' @param d The dimension of the input vector on instantiation.
 #'
+#' @examples
+#' Mxm(1) |> inst(ReLU, -5)
+#' Mxm(3) |> inst(ReLU, c(4,5,1))
+#' Mxm(5) |> inst(ReLU, c(5,3,-1,6,6))
+#'
+#'
 #' @return The neural network that will ouput the maximum of a vector of
 #' size \eqn{d} when activated with the ReLU function.
 #'

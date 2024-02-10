@@ -22,6 +22,13 @@ real number \eqn{x}.
 \description{
 Tun: The function that returns tunneling neural networks
 }
+\examples{
+Tun(5)
+Tun(5,3)
+
+
+
+}
 \references{
 Definition 2.17. Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
 Approximating Functions Using Neural Network Polynomials

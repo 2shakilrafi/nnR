@@ -11,7 +11,7 @@ source("R/nn_sum.R")
 #' activation.
 #'
 #'
-#' @param d the dimensions of the vector being normed.
+#' @param d the dimensions of the vector or list being normed.
 #'
 #' @return a neural network that takes the 1-norm of a vector of
 #' size d.under ReLU activation.
@@ -19,6 +19,14 @@ source("R/nn_sum.R")
 #'
 #' \emph{Note:} This function is split into two cases
 #' much like the definition itself.
+#'
+#' \emph{Note:} If you choose to specify a \eqn{d} other that \eqn{0} you must instantiate with
+#' a vector or list of that length.
+#'
+#' @examples
+#' Nrm(2) |> inst(ReLU, c(5,6))
+#' Nrm(5) |> inst(ReLU,c(0,-9,3,4,-11))
+#'
 #'
 #' For a specific definition, see:
 #'
