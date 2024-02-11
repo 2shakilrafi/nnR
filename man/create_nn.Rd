@@ -18,7 +18,7 @@ on the matrix come from a standard normal distribution.
 Function to create a list of lists for neural network layers
 }
 \examples{
-create_nn(c(8,7,8))
+create_nn(c(8, 7, 8))
 create_nn()
 
 }

@@ -24,8 +24,8 @@ source("R/is_nn.R")
 #' prefix version.
 #'
 #' @examples
-#' create_nn(c(5,4,6,7)) %comp% create_nn(c(4,1,5))
-#' create_nn(c(5,4,6,7)) |> comp(create_nn(c(4,1,5)))
+#' create_nn(c(5, 4, 6, 7)) %comp% create_nn(c(4, 1, 5))
+#' create_nn(c(5, 4, 6, 7)) |> comp(create_nn(c(4, 1, 5)))
 
 #' @encoding utf8
 #' @export

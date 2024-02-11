@@ -17,7 +17,7 @@ The function that returns the output layer size of a neural
 network. Denoted \eqn{\mathsf{O}}.
 }
 \examples{
-create_nn(c(4,5,6,2)) |> out()
+create_nn(c(4, 5, 6, 2)) |> out()
 }
 \references{
 Definition 1.3.1. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).

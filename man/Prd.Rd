@@ -25,8 +25,7 @@ approximates the product of two real numbers when given an appropriate
 activation.
 }
 \examples{
-Prd(2.1,0.1) |> inst(ReLU,c(4,5)) #This may take some time, please only click once
-
+Prd(2.1, 0.1) |> inst(ReLU, c(4, 5)) # This may take some time, please only click once
 
 }
 \references{

@@ -6,8 +6,6 @@
 #' Id()
 #' Id(3)
 #'
-#'
-#'
 #' @references Definition 2.17. Rafi S., Padgett, J.L., Nakarmi, U. (2024)
 #' Towards an Algebraic Framework For
 #' Approximating Functions Using Neural Network Polynomials
@@ -40,4 +38,3 @@ Id <- function(d = 1) {
     stop("Unknown error")
   }
 }
-

@@ -19,12 +19,10 @@ source("R/Tay.R")
 #' \url{https://arxiv.org/abs/2402.01058}
 #'
 #' @examples
-#' Xpn(3,2.1,0.1) #this may take some time
+#' Xpn(3, 2.1, 0.1) # this may take some time
 #'
 #' @examples
-#' Xpn(3,2.1,0.1) |> inst(ReLU,2) #this may take some time
-#'
-#'
+#' Xpn(3, 2.1, 0.1) |> inst(ReLU, 2) # this may take some time
 #'
 #' @export
 

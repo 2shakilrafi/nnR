@@ -27,12 +27,11 @@ source("R/is_nn.R")
 #' infix version.
 #'
 #' @examples
-#' 5 %slm% Prd(2.1,0.1)
-#' Prd(2.1,0.1) %srm% 5
+#' 5 %slm% Prd(2.1, 0.1)
+#' Prd(2.1, 0.1) %srm% 5
 #'
-#' 5 |> slm(Prd(2.1,0.1))
-#' Prd(2.1,0.1) |> srm(5)
-#'
+#' 5 |> slm(Prd(2.1, 0.1))
+#' Prd(2.1, 0.1) |> srm(5)
 #'
 #' @export
 
@@ -147,5 +146,3 @@ srm <- function(nu, a) {
     stop("a must be a real number and nu must be a neural network")
   }
 }
-
-

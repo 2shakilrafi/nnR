@@ -7,7 +7,7 @@
 #'
 #' @examples
 #' i(5)
-#'
+#' i(10)
 #'
 #' @references Definition 2.2.6. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).
 #' Mathematical introduction to deep learning: Methods, implementations,

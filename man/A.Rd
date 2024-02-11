@@ -13,4 +13,10 @@ A
 \description{
 This is an intermediate variable. See the reference
 }
+\references{
+Definition 2.22. Rafi S., Padgett, J.L., Nakarmi, U. (2024)
+Towards an Algebraic Framework For
+Approximating Functions Using Neural Network Polynomials
+\url{https://arxiv.org/abs/2402.01058}
+}
 \keyword{datasets}

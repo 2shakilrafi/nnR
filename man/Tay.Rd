@@ -8,7 +8,7 @@ Tay(f, n, q, eps)
 }
 \arguments{
 \item{f}{the function to be Taylor approximated, for now "exp", "sin"
-and "cos". NOTE use the quotation marks when using this arguments}
+and "cos". NOTE use the quotation marks when using this argument.}
 
 \item{n}{the extent of Taylor approximations, a natural number}
 
@@ -17,8 +17,15 @@ and "cos". NOTE use the quotation marks when using this arguments}
 \item{eps}{argument for the Pwr networks \eqn{eps \in (0,\infty)}}
 }
 \value{
-a neural network that approximates the function f
+a neural network that approximates the function f. For now only
+\eqn{sin}, \eqn{cos}, and \eqn{e^x} are available.
 }
 \description{
 The Tay function
+}
+\examples{
+Tay("sin", 2, 2.1, 0.1) |> inst(ReLU, 2) # May take some time, please only click once
+Tay("cos", 2, 2.1, 0.1) # May take some time, please only click once
+Tay("exp", 2, 2.1, 0.1) # May take some time, please only click once
+
 }

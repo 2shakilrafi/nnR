@@ -30,10 +30,8 @@ The function that instantiates a neural network as created
 by create_nn().
 }
 \examples{
-create_nn(c(1,3,5,6)) |> inst(ReLU, 5)
-create_nn(c(3,3,5,6)) |> inst(ReLU, c(4,4,4))
-
-
+create_nn(c(1, 3, 5, 6)) |> inst(ReLU, 5)
+create_nn(c(3, 3, 5, 6)) |> inst(ReLU, c(4, 4, 4))
 
 }
 \references{

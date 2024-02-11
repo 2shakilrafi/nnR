@@ -21,8 +21,8 @@
 #' \url{https://arxiv.org/abs/1908.03833}.
 #'
 #' @examples
-#' create_nn(c(5,6,7)) |> is_nn()
-#'
+#' create_nn(c(5, 6, 7)) |> is_nn()
+#' Sqr(2.1, 0.1) |> is_nn()
 #'
 #' @export
 

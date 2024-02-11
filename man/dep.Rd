@@ -20,7 +20,7 @@ The function that returns the depth of a neural network. Denoted
 \eqn{\mathsf{D}}.
 }
 \examples{
-create_nn(c(4,5,6,2)) |> dep()
+create_nn(c(4, 5, 6, 2)) |> dep()
 }
 \references{
 Definition 1.3.1. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).

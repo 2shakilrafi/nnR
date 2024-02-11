@@ -19,8 +19,6 @@ The function that returns the \eqn{\mathsf{Id_1}} networks.
 Id()
 Id(3)
 
-
-
 }
 \references{
 Definition 2.17. Rafi S., Padgett, J.L., Nakarmi, U. (2024)

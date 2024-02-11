@@ -30,6 +30,14 @@ of our input x under instantiation with a continuous activation function.
 Also the word parallelization has a lot of baggage when it comes to
 artificial neural networks in that it often means many different CPUs working
 together.
+}
+\description{
+A function that stacks neural networks.
+}
+\examples{
+create_nn(c(4,5,6)) \%stk\% create_nn(c(6,7))
+create_nn(c(9,1,67)) |> stk(create_nn(c(4,4,4,4,4)))
+
 
 \emph{Remark:} We will use only one symbol for stacking equal and unequal depth
 neural networks, namely "stk". This is for usability but also that
@@ -39,9 +47,7 @@ of different sizes is what is needed.
 \emph{Remark:} We have two versions, a prefix and an infix version.
 
 This operation on neural networks, called "parallelization" is found in:
-}
-\description{
-A function that stacks neural networks.
+
 }
 \references{
 Grohs, P., Hornung, F., Jentzen, A. et al. Space-time error estimates for deep

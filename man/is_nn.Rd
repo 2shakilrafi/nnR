@@ -20,8 +20,8 @@ We will use the definition of neural networks as found in:
 Function to create a list of lists for neural network layers
 }
 \examples{
-create_nn(c(5,6,7)) |> is_nn()
-
+create_nn(c(5, 6, 7)) |> is_nn()
+Sqr(2.1, 0.1) |> is_nn()
 
 }
 \references{

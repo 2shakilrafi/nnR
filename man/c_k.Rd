@@ -11,9 +11,20 @@ C_k(k)
 within \eqn{[0,1]}}
 }
 \value{
-A neural network that approximates the square of any real within
-\eqn{[0,1]}
+An intermediate matrix in a
+neural network that approximates the square of any real within
+\eqn{[0,1]} upon ReLU instantiation.
 }
 \description{
 C_k: The function that returns the C_k matrix
+}
+\examples{
+C_k(5)
+
+}
+\references{
+Definition 2.22. Rafi S., Padgett, J.L., Nakarmi, U. (2024)
+Towards an Algebraic Framework For
+Approximating Functions Using Neural Network Polynomials
+\url{https://arxiv.org/abs/2402.01058}
 }

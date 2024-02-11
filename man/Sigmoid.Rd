@@ -7,7 +7,7 @@
 Sigmoid(x)
 }
 \arguments{
-\item{x}{a real number that is the input to our Sigmoid function}
+\item{x}{a real number that is the input to our Sigmoid function.}
 }
 \value{
 The output of a standard Sigmoid function,
@@ -16,4 +16,9 @@ See also \code{\link{Tanh}}.and \code{\link{ReLU}}.
 }
 \description{
 The Sigmoid activation function.
+}
+\examples{
+Sigmoid(0)
+Sigmoid(-1)
+
 }

@@ -23,10 +23,11 @@ real number \eqn{x}.
 Tun: The function that returns tunneling neural networks
 }
 \examples{
+Tun(4)
+Tun(4, 3) |> view_nn()
+
 Tun(5)
-Tun(5,3)
-
-
+Tun(5, 3)
 
 }
 \references{

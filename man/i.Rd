@@ -17,7 +17,7 @@ The function that returns the \eqn{\mathbb{i}} network.
 }
 \examples{
 i(5)
-
+i(10)
 
 }
 \references{

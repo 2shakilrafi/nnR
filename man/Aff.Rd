@@ -22,9 +22,10 @@ See also \code{\link{Cpy}} and \code{\link{Sum}}.
 The function that returns \eqn{\mathsf{Aff}} neural networks.
 }
 \examples{
-Aff(4,5)
-Aff(c(5,6,7,8,9,10)|>matrix(2,3),5)
-
+Aff(4, 5)
+c(5, 6, 7, 8, 9, 10) |>
+  matrix(2, 3) |>
+  Aff(5)
 
 }
 \references{

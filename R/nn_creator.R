@@ -23,7 +23,7 @@ generate_random_matrix <- function(rows, cols) {
 #' on the matrix come from a standard normal distribution.
 #'
 #' @examples
-#' create_nn(c(8,7,8))
+#' create_nn(c(8, 7, 8))
 #' create_nn()
 #'
 #' @references Definition 2.1 in Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For

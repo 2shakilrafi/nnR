@@ -19,11 +19,9 @@ source("R/Tay.R")
 #' \url{https://arxiv.org/abs/2402.01058}
 #'
 #' @examples
-#' Csn(3,2.1,0.1) #this may take some time
+#' Csn(3, 2.1, 0.1) # this may take some time
 #'
-#' Csn(3,2.1,0.1) |> inst(ReLU,1.57)
-#'
-#'
+#' Csn(3, 2.1, 0.1) |> inst(ReLU, 1.57)
 #'
 #' @export
 

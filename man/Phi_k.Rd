@@ -15,6 +15,11 @@ The Phi_k neural network
 \description{
 The Phi_k function
 }
+\examples{
+Phi_k(4) |> view_nn()
+Phi_k(5) |> view_nn()
+
+}
 \references{
 Definition 2.22. Rafi S., Padgett, J.L., Nakarmi, U. (2024)
 Towards an Algebraic Framework For

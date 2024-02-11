@@ -32,8 +32,7 @@ source("R/scalar_mult.R")
 #' \url{https://arxiv.org/abs/2402.01058}
 #'
 #' @examples
-#' Prd(2.1,0.1) |> inst(ReLU,c(4,5)) #This may take some time, please only click once
-#'
+#' Prd(2.1, 0.1) |> inst(ReLU, c(4, 5)) # This may take some time, please only click once
 #'
 #' @export
 

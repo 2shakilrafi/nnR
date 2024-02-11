@@ -7,7 +7,7 @@
 Phi(eps)
 }
 \arguments{
-\item{eps}{parameter for Phi}
+\item{eps}{parameter for Phi in \eqn{(0,\infty)}}
 }
 \value{
 neural network Phi that approximately squares a number between
@@ -15,6 +15,11 @@ neural network Phi that approximately squares a number between
 }
 \description{
 The Phi function
+}
+\examples{
+Phi(0.5) |> view_nn()
+Phi(0.1) |> view_nn()
+
 }
 \references{
 Definition 2.23. Rafi S., Padgett, J.L., Nakarmi, U. (2024)

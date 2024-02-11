@@ -12,11 +12,9 @@ source("R/Aff.R")
 #' @param eps argument for the Pwr networks \eqn{eps \in (0,\infty)}
 #'
 #' @examples
-#' Tay("sin",2,2.1,0.1) |> inst(ReLU,2) #May take some time, please only click once
-#' Tay("cos",2,2.1,0.1) #May take some time, please only click once
-#' Tay("exp",2,2.1,0.1) #May take some time, please only click once
-#'
-#'
+#' Tay("sin", 2, 2.1, 0.1) |> inst(ReLU, 2) # May take some time, please only click once
+#' Tay("cos", 2, 2.1, 0.1) # May take some time, please only click once
+#' Tay("exp", 2, 2.1, 0.1) # May take some time, please only click once
 #'
 #' @return a neural network that approximates the function f. For now only
 #' \eqn{sin}, \eqn{cos}, and \eqn{e^x} are available.

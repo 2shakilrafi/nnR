@@ -21,10 +21,8 @@ and a real number \eqn{x}
 A function that returns the \eqn{\mathsf{Sqr}} neural networks.
 }
 \examples{
-Sqr(2.5,0.1)
-Sqr(2.5,0.1) |> inst(ReLU,4)
-
-
+Sqr(2.5, 0.1)
+Sqr(2.5, 0.1) |> inst(ReLU, 4)
 
 }
 \references{

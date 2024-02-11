@@ -21,10 +21,9 @@ source("R/Tay.R")
 #' \url{https://arxiv.org/abs/2402.01058}
 #'
 #' @examples
-#' Sne(3,2.1,0.1) #this may take some time, click only once and wait
+#' Sne(3, 2.1, 0.1) # this may take some time, click only once and wait
 #'
-#' Sne(3,2.1,0.1) |> inst(ReLU,1.57) #this may take some time, click only once and wait
-#'
+#' Sne(3, 2.1, 0.1) |> inst(ReLU, 1.57) # this may take some time, click only once and wait
 #'
 #' @export
 

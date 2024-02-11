@@ -8,22 +8,31 @@ Etr(n, h)
 }
 \arguments{
 \item{n}{number of trapezoids to make. Note this will result in a set of
-trapezoids.
-Note that this will result in n+1 meshpoints including the starting a and
-ending b
+trapezoids. A natural number.}
+
+\item{h}{width of trapezoids. A positive real number.
+
 
 \emph{Note: } Upon instantiation with any continuous function this neural
 network must be fed with \eqn{n+1} real numbers representing the values
 of the function being approximated at the \eqn{n+1} meshpoints which are
-the legs of the \eqn{n} triangles as stipulated in the input parameters.}
-
-\item{h}{width of trapezoids}
+the legs of the \eqn{n} trapezoids as stipulated in the input parameter \eqn{n}..}
 }
 \value{
-an approximation for value of the integral.
+An approximation for value of the integral of a function. Must be instantiated
+with a list of \eqn{n+1} reals
 }
 \description{
 The function that returns the \eqn{\mathsf{Etr}} networks.
+}
+\examples{
+Etr(5, 0.1)
+seq(0, pi, length.out = 1000) |> sin() -> samples
+Etr(1000 - 1, pi / 1000) |> inst(ReLU, samples)
+
+seq(0, 2, length.out = 1000)^2 -> samples
+Etr(1000 - 1, 2 / 1000) |> inst(Tanh, samples)
+
 }
 \references{
 Definition 2.33. Rafi S., Padgett, J.L., Nakarmi, U. (2024)

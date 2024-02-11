@@ -11,10 +11,17 @@ Trp(h)
 }
 \value{
 The \eqn{\mathsf{Trp}} network that gives the area
-when activated with ReLU and two meshpoint values x_1 and x_2.
+when activated with ReLU or any continuous function and two
+meshpoint values \eqn{x_1} and \eqn{x_2}.
 }
 \description{
 The function that returns the \eqn{\mathsf{Trp}} networks.
+}
+\examples{
+Trp(0.1)
+Trp(0.5) |> inst(ReLU, c(9, 7))
+Trp(0.1) |> inst(Sigmoid, c(9, 8))
+
 }
 \references{
 Definition 2.31. Rafi S., Padgett, J.L., Nakarmi, U. (2024)

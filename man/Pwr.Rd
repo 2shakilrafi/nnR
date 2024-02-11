@@ -23,7 +23,6 @@ under ReLU activation at \eqn{x}.
 A function that returns the \eqn{\mathsf{Pwr}} neural networks.
 }
 \examples{
-Pwr(2.1,0.1,2) |> inst(ReLU, 3) #This may take some time, please only click once
-
+Pwr(2.1, 0.1, 2) |> inst(ReLU, 3) # This may take some time, please only click once.
 
 }

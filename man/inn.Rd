@@ -18,7 +18,7 @@ The function that returns the input layer size of a neural
 network. Denoted \eqn{\mathsf{I}}
 }
 \examples{
-create_nn(c(4,5,6,2)) |> inn()
+create_nn(c(4, 5, 6, 2)) |> inn()
 }
 \references{
 Definition 1.3.1. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).

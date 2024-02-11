@@ -18,7 +18,7 @@ The function that returns the layer architecture of a neural
 network.
 }
 \examples{
-create_nn(c(4,5,6,2)) |> lay()
+create_nn(c(4, 5, 6, 2)) |> lay()
 }
 \references{
 Definition 1.3.1. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).

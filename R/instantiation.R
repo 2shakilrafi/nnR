@@ -38,10 +38,8 @@ source("R/is_nn.R")
 #'
 #'
 #' @examples
-#' create_nn(c(1,3,5,6)) |> inst(ReLU, 5)
-#' create_nn(c(3,3,5,6)) |> inst(ReLU, c(4,4,4))
-#'
-#'
+#' create_nn(c(1, 3, 5, 6)) |> inst(ReLU, 5)
+#' create_nn(c(3, 3, 5, 6)) |> inst(ReLU, c(4, 4, 4))
 #'
 #' @export
 #'
@@ -50,8 +48,8 @@ inst <- function(neural_network, activation_function, x) {
   if (neural_network |> is_nn() == FALSE) {
     stop("Only neural networks can be instantiated")
   } else if (neural_network |> inn() != x |>
-             matrix() |>
-             nrow()) {
+    matrix() |>
+    nrow()) {
     stop("x does not match input size required by neural network")
   } else {
     if (dep(neural_network) == 1) {
@@ -64,8 +62,8 @@ inst <- function(neural_network, activation_function, x) {
     for (i in 1:(length(neural_network) - 1)) {
       neural_network[[i]]$W %*% output + neural_network[[i]]$b -> linear_transform
       apply(linear_transform,
-            MARGIN = 1,
-            FUN = activation_function
+        MARGIN = 1,
+        FUN = activation_function
       ) -> output
     }
     neural_network[[length(neural_network)]]$W %*% output +

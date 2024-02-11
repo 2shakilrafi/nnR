@@ -15,7 +15,6 @@ source("R/Aff.R")
 #' Phi(0.5) |> view_nn()
 #' Phi(0.1) |> view_nn()
 #'
-#'
 #' @return neural network Phi that approximately squares a number between
 #' 0 and 1.
 

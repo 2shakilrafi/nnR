@@ -16,7 +16,7 @@ source("R/nn_viewer.R")
 #'
 #' @examples
 #' Tun(4)
-#' Tun(4,3) |> view_nn()
+#' Tun(4, 3) |> view_nn()
 #'
 #' @references Definition 2.17. Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
 #' Approximating Functions Using Neural Network Polynomials
@@ -24,9 +24,7 @@ source("R/nn_viewer.R")
 #'
 #' @examples
 #' Tun(5)
-#' Tun(5,3)
-#'
-#'
+#' Tun(5, 3)
 #'
 #' @export
 #'

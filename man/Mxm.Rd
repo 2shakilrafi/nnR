@@ -22,6 +22,12 @@ The function that returns the \eqn{\mathsf{Mxm}} neural networks.
 into five cases. We add an extra case for \eqn{d = 3}. Unlike the paper
 we will simply reverse engineer the appropriate \emph{d}.
 }
+\examples{
+Mxm(1) |> inst(ReLU, -5)
+Mxm(3) |> inst(ReLU, c(4, 5, 1))
+Mxm(5) |> inst(ReLU, c(5, 3, -1, 6, 6))
+
+}
 \references{
 Lemma 4.2.4. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).
 Mathematical introduction to deep learning: Methods, implementations,

@@ -19,7 +19,7 @@ The function that returns the number of hidden layers of a
 neural network. Denoted \eqn{\mathsf{H}}
 }
 \examples{
-create_nn(c(4,5,6,2)) |> hid()
+create_nn(c(4, 5, 6, 2)) |> hid()
 
 }
 \references{

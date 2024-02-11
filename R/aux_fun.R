@@ -14,13 +14,13 @@ source("R/is_nn.R")
 #'
 #' @return Integer representing the number of hidden layers.
 #' @examples
-#' create_nn(c(4,5,6,2)) |> hid()
+#' create_nn(c(4, 5, 6, 2)) |> hid()
 #'
 #' @export
 
 hid <- function(nu) {
   if (nu |> is_nn() == TRUE) {
-    return(length(nu)-1)
+    return(length(nu) - 1)
   } else {
     stop("Only neural networks can have hidden layers")
   }
@@ -43,7 +43,7 @@ hid <- function(nu) {
 #' @return Integer representing the depth of the neural network.
 #'
 #' @examples
-#' create_nn(c(4,5,6,2)) |> dep()
+#' create_nn(c(4, 5, 6, 2)) |> dep()
 #' @export
 
 dep <- function(nu) {
@@ -69,7 +69,7 @@ dep <- function(nu) {
 #'
 #' @return An integer representing the input width of the neural network.
 #' @examples
-#' create_nn(c(4,5,6,2)) |> inn()
+#' create_nn(c(4, 5, 6, 2)) |> inn()
 #' @export
 
 inn <- function(nu) {
@@ -94,7 +94,7 @@ inn <- function(nu) {
 #'
 #' @return An integer representing the output width of the neural network.
 #' @examples
-#' create_nn(c(4,5,6,2)) |> out()
+#' create_nn(c(4, 5, 6, 2)) |> out()
 #' @export
 
 out <- function(nu) {
@@ -120,7 +120,7 @@ out <- function(nu) {
 #'
 #' @return A tuple representing the layer architecture of our neural network.
 #' @examples
-#' create_nn(c(4,5,6,2)) |> lay()
+#' create_nn(c(4, 5, 6, 2)) |> lay()
 #' @export
 
 
@@ -149,7 +149,7 @@ lay <- function(nu) {
 #'
 #' @return An integer representing the parameter count of our neural network.
 #' @examples
-#' create_nn(c(4,5,6,2)) |> param()
+#' create_nn(c(4, 5, 6, 2)) |> param()
 #' @export
 
 param <- function(nu) {
@@ -160,6 +160,3 @@ param <- function(nu) {
     stop("Only neural networks can have parameters")
   }
 }
-
-
-

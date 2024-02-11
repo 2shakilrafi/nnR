@@ -7,11 +7,22 @@
 ck(k)
 }
 \arguments{
-\item{k}{input value}
+\item{k}{input value, any real number}
 }
 \value{
 the ck function
 }
 \description{
 The ck function
+}
+\examples{
+ck(1)
+ck(-1)
+
+}
+\references{
+Definition 2.22. Rafi S., Padgett, J.L., Nakarmi, U. (2024)
+Towards an Algebraic Framework For
+Approximating Functions Using Neural Network Polynomials
+\url{https://arxiv.org/abs/2402.01058}
 }

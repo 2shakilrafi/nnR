@@ -16,3 +16,8 @@ the \eqn{tanh} of x. See also \code{\link{Sigmoid}} and
 \description{
 The tanh activation function
 }
+\examples{
+Tanh(0)
+Tanh(0.1)
+
+}

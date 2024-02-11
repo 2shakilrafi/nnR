@@ -23,9 +23,10 @@
 #' See also \code{\link{Cpy}} and \code{\link{Sum}}.
 #'
 #' @examples
-#' Aff(4,5)
-#' Aff(c(5,6,7,8,9,10)|>matrix(2,3),5)
-#'
+#' Aff(4, 5)
+#' c(5, 6, 7, 8, 9, 10) |>
+#'   matrix(2, 3) |>
+#'   Aff(5)
 #'
 #' @export
 
@@ -69,7 +70,7 @@ Cpy <- function(n, k) {
       W |> rbind(k |> diag()) -> W
     }
     0 |> matrix(n * k) -> b
-    Aff(W,b) -> return_network
+    Aff(W, b) -> return_network
     return(return_network)
   }
 }
@@ -112,7 +113,7 @@ Sum <- function(n, k) {
       W |> cbind(k |> diag()) -> W
     }
     0 |> matrix(k) -> b
-    Aff(W,b) -> return_network
+    Aff(W, b) -> return_network
 
     return(return_network)
   }

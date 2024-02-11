@@ -25,11 +25,9 @@ with ReLU activation. See also \code{\link{Sne}}.
 The function that returns \eqn{\mathsf{Csn}}.
 }
 \examples{
-Csn(3,2.1,0.1) #this may take some time
+Csn(3, 2.1, 0.1) # this may take some time
 
-Csn(3,2.1,0.1) |> inst(ReLU,1.57)
-
-
+Csn(3, 2.1, 0.1) |> inst(ReLU, 1.57)
 
 }
 \references{

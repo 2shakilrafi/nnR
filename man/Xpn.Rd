@@ -26,11 +26,9 @@ activation at point\eqn{x}.
 The Xpn function
 }
 \examples{
-Xpn(3,2.1,0.1) #this may take some time
+Xpn(3, 2.1, 0.1) # this may take some time
 
-Xpn(3,2.1,0.1) |> inst(ReLU,2) #this may take some time
-
-
+Xpn(3, 2.1, 0.1) |> inst(ReLU, 2) # this may take some time
 
 }
 \references{
