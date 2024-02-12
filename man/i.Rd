@@ -2,7 +2,7 @@
 % Please edit documentation in R/i.R
 \name{i}
 \alias{i}
-\title{: i}
+\title{i}
 \usage{
 i(d)
 }

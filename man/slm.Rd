@@ -29,8 +29,6 @@ The function that returns the left  scalar multiplication
 neural network
 }
 \examples{
-5 \%slm\% Prd(2.1, 0.1)
-Prd(2.1, 0.1) \%srm\% 5
 
 5 |> slm(Prd(2.1, 0.1))
 Prd(2.1, 0.1) |> srm(5)

@@ -47,9 +47,11 @@ MC <- function(X, y, L) {
     stop("Enter atleast 2 interpolating points")
   } else if (ncol(X) != nrow(y)) {
     stop("X and y mismatch")
-  } else if (nrow(X) > 1) {
+  }
+  else if (nrow(X) > 1) {
     stop("Only 1-D interpolation is implemented")
-  } else {
+  }
+  else {
     Cpy(n, d) -> first_compose # the first neural network to be hit with x
     Nrm(d) |> comp(Aff(diag(d), -X[, 1])) -> second_compose # the second neural network to be hit
     for (j in 2:n) {

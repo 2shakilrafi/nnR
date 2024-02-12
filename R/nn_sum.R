@@ -25,7 +25,6 @@ source("R/is_nn.R")
 #' \emph{Note:} We have two versions, an infix version and a prefix version.
 #'
 #' @examples
-#' Prd(2.1, 0.1) %nn_sum% Prd(2.1, 0.1)
 #' Prd(2.1, 0.1) |> nn_sum(Prd(2.1, 0.1))
 #'
 #' @export

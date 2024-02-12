@@ -52,9 +52,6 @@ create_block_diagonal <- function(matrix1, matrix2) {
 #' artificial neural networks in that it often means many different CPUs working
 #' together.
 #'
-#' @examples
-#' create_nn(c(4,5,6)) %stk% create_nn(c(6,7))
-#' create_nn(c(9,1,67)) |> stk(create_nn(c(4,4,4,4,4)))
 #'
 #'
 #' \emph{Remark:} We will use only one symbol for stacking equal and unequal depth
@@ -72,10 +69,15 @@ create_block_diagonal <- function(matrix1, matrix2) {
 #'
 #' And especially in:
 #'
-#' @references#' Definition 2.14 in Rafi S., Padgett, J.L., Nakarmi, U. (2024)
+#' @references' Definition 2.14 in Rafi S., Padgett, J.L., Nakarmi, U. (2024)
 #' Towards an Algebraic Framework For
 #' Approximating Functions Using Neural Network Polynomials
 #' \url{https://arxiv.org/abs/2402.01058}
+#'
+#'@examples
+#' create_nn(c(4,5,6)) |> stk(create_nn(c(6,7)))
+#' create_nn(c(9,1,67)) |> stk(create_nn(c(4,4,4,4,4)))
+#'
 #'
 #' @export
 
@@ -115,7 +117,7 @@ stk <- function(nu, mu) {
 #'
 #' @param nu neural network.
 #' @param mu neural network.
-#'
+#' @rdname stk
 #' @return A stacked neural network of nu and mu.
 #' @export
 

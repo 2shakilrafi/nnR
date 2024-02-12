@@ -17,5 +17,5 @@ test_that("Activation functions only take real numbers or lists of real numbers"
     expect_no_error()
 
   "Maarufa" |>
-    Tanh()
+    Tanh() |> expect_error()
 })

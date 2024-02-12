@@ -28,7 +28,6 @@ create_nn().
 For a specific definition, see:
 }
 \examples{
-Prd(2.1, 0.1) \%nn_sum\% Prd(2.1, 0.1)
 Prd(2.1, 0.1) |> nn_sum(Prd(2.1, 0.1))
 
 }

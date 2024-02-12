@@ -19,7 +19,7 @@ Function to create a list of lists for neural network layers
 }
 \examples{
 create_nn(c(8, 7, 8))
-create_nn()
+create_nn(c(4,4))
 
 }
 \references{

@@ -7,7 +7,7 @@ source("R/aux_fun.R")
 #' @description Takes a neural network shown in vectorized form and explicitly
 #' displays it.
 #'
-#' @param nn A neural network of the type creted by \code{\link{create_nn()}}, i.e.
+#' @param nn A neural network., i.e.
 #' a list of lists of \eqn{W} and \eqn{b}.
 #'
 #' @examples
@@ -22,7 +22,7 @@ source("R/aux_fun.R")
 #'
 #' @examples
 #' Xpn(3, 2.1, 1.1) |> view_nn()
-#' Pwr(2, 2.1, 0.1) |> view_nn()
+#' Pwr(2.1, 0.1, 3) |> view_nn()
 view_nn <- function(nn) {
   if (nn |> is_nn() == TRUE) {
     for (i in 1:dep(nn)) {

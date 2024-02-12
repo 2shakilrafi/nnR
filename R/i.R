@@ -1,4 +1,4 @@
-#' @title: i
+#' @title i
 #' @description The function that returns the \eqn{\mathbb{i}} network.
 #'
 #' @param d the size of the \eqn{\mathsf{i}} network

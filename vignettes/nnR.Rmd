@@ -5,6 +5,7 @@ vignette: >
   %\VignetteIndexEntry{nnR}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+bibliography: references.bib
 ---
 
 ```{r, include = FALSE}
@@ -16,4 +17,442 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(nnR)
+```
+
+```{=tex}
+\usepackage{amsmath,amssymb,mathtools,amsthm}
+\DeclareMathOperator{\rect}{\mathfrak{r}}
+\DeclareMathOperator{\param}{\mathsf{P}}
+\DeclareMathOperator{\inn}{\mathsf{I}}
+\DeclareMathOperator{\out}{\mathsf{O}}
+\DeclareMathOperator{\neu}{\mathsf{NN}}
+\DeclareMathOperator{\hid}{\mathsf{H}}
+\DeclareMathOperator{\lay}{\mathsf{L}}
+\DeclareMathOperator{\dep}{\mathsf{D}}
+\DeclareMathOperator{\we}{Weight}
+\DeclareMathOperator{\bi}{Bias}
+\DeclareMathOperator{\aff}{\mathsf{Aff}}
+\DeclareMathOperator{\act}{\mathfrak{a}}
+\DeclareMathOperator{\real}{\mathfrak{I}}
+\DeclareMathOperator{\id}{\mathsf{Id}}
+\DeclareMathOperator{\mult}{Mult}
+\DeclareMathOperator{\wid}{\mathsf{W}}
+\DeclareMathOperator{\sm}{\mathsf{Sum}}
+\DeclareMathOperator{\trn}{Trn}
+\DeclareMathOperator{\tun}{\mathsf{Tun}}
+\DeclareMathOperator{\cpy}{\mathsf{Cpy}}
+\DeclareMathOperator{\ex}{\mathfrak{E}}
+\DeclareMathOperator{\lin}{Lin}
+\DeclareMathOperator{\relu}{\mathsf{ReLU}}
+\DeclareMathOperator{\zero}{Zr}
+\DeclareMathOperator{\sqr}{\mathsf{Sqr}}
+\DeclareMathOperator{\prd}{\mathsf{Prd}}
+\DeclareMathOperator{\pwr}{\mathsf{Pwr}}
+\DeclareMathOperator{\xpn}{\mathsf{Xpn}}
+\DeclareMathOperator{\rem}{\mathsf{Rem}}
+\DeclareMathOperator{\tay}{\mathsf{Tay}}
+\DeclareMathOperator{\G}{\mathsf{G}}
+\DeclareMathOperator{\F}{\mathsf{F}}
+\DeclareMathOperator{\U}{\mathsf{U}}
+\DeclareMathOperator{\sP}{\mathsf{P}}
+\DeclareMathOperator{\linn}{\mathsf{Lin}}
+\DeclareMathOperator{\nrm}{\mathsf{Nrm}}
+\DeclareMathOperator{\mxm}{\mathsf{Mxm}}
+\DeclareMathOperator{\trp}{\mathsf{Trp}}
+\DeclareMathOperator{\etr}{\mathsf{Etr}}
+\DeclareMathOperator{\lc}{\left\lceil}
+\DeclareMathOperator{\rc}{\right\rceil}
+\DeclareMathOperator{\csn}{\mathsf{Csn}}
+\DeclareMathOperator{\sne}{\mathsf{Sne}}
+\DeclareMathOperator{\pln}{\mathsf{Pln}}
+\DeclareMathOperator{\pnm}{\mathsf{Pnm}}
+\DeclareMathOperator{\inst}{\mathfrak{I}}
+\DeclareMathOperator{\rows}{rows}
+\DeclareMathOperator{\columns}{columns}
+\DeclareMathOperator{\obj}{obj}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\cod}{cod}
+```
+```{=tex}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\p}{\mathfrak{p}}
+\newcommand{\mft}{\mathfrak{t}}
+\newcommand{\f}{\mathfrak{f}}
+\newcommand{\C}{\mathfrak{C}}
+\newcommand{\n}{\mathscr{N}}
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+\newcommand{\rb}{\right]}
+\newcommand{\lb}{\left[}
+\newcommand{\lv}{\left|}
+\newcommand{\rv}{\right|}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\les}{\leqslant}
+\newcommand{\ges}{\geqslant}
+\newcommand{\bigtimes}{\times}
+```
+```{=tex}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{claim}[theorem]{Claim}
+```
+This package aims to implement a series of operations first described in @grohs2019spacetime, @petersen_optimal_2018, @Grohs_2022, @bigbook, and a broad extension to that framework of operations as seen in @rafi_towards_2024.
+Our main definitions will be from @rafi_towards_2024, but we will also delve deeper into the literature when necessary.
+
+### Neural Networks and Generating Them
+
+Our definition of neural networks will be ordered tuples of ordered pairs.
+A neural network is something like $((W_1,b_1),(W_2,b_2), (W_3,b_3))$.
+Where each $W_i$ is a weight matrix and each $b_i$ is a bias vector.
+You may create neural networks by specifying a list, that will indicate the number of neurons in each layer.
+
+```{r}
+layer_architecture = c(4,5,6,5)
+create_nn(layer_architecture)
+
+```
+
+Note that each weight and bias vector will be populated from a standard uniform distribution.
+Associated with each neural network will be a family of functions:
+
+-   `dep`: showing the depth of a neural network:
+
+    ```{r}
+    nn = create_nn(c(9,4,5,6))
+    dep(nn)
+
+    ```
+
+-   `param`: showing the number of parameters (sum of the total number of elements in each weight matrix and bias vector):
+
+    ```{r}
+    nn = create_nn(c(9,4,5,6))
+    param(nn)
+    ```
+
+-   `inn`: the width of the input layer:
+
+    ```{r}
+    nn = create_nn(c(9,4,5,6))
+    inn(nn)
+    ```
+
+-   `out`: the width of the output layer:
+
+    ```{r}
+    nn = create_nn(c(9,4,5,6))
+    out(nn)
+    ```
+
+-   `hid`: the number of hidden layers, always defined to be one less than depth:
+
+```{r}
+nn = create_nn(c(9,4,5,6))
+hid(nn)
+```
+
+-   `lay`: a list specifying the width of each layer, often will be called the *layer architecture*:
+
+    ```{r}
+    nn = create_nn(c(9,4,5,6))
+    lay(nn)
+    ```
+
+### Instantiating Neural Networks
+
+Instantiation refers to the act of applying an activation function between each layer and resulting in a continuous function.
+Only three such activation functions have been implemented ReLU, Sigmoid, and Tanh.
+
+Because the current theoretical frameworks of @rafi_towards_2024, @bigbook, @grohs2019spacetime only show theoretical results for ReLU activation, our Xpn, Sne, and Csn, among others will only show approximations under ReLU activations.
+
+Instantiations must always be accompanied by the appropriate vector $x$ of the same length as the input layer of the instantiated neural network.
+See examples:
+
+```{r}
+create_nn(c(1, 3, 5, 6)) |> inst(ReLU, 8)
+```
+
+```{r}
+create_nn(c(3,4,5,1)) |> inst(ReLU,c(1,2,3))
+```
+
+Instantiation will have a special symbol $\mathfrak{I}$, and instantiation with ReLU will be denoted as $\mathfrak{I}_{\mathsf{ReLU}}$.
+
+### Composition
+
+Composition has the wonderful property that it works well with instantiation, i.e. instantiation of two composed neural networks are the same as the composition of the instantiated continuous functions, i.e.
+
+$$
+\mathfrak{I}_{\mathsf{ReLU}} \left( \nu_1 \bullet \nu_2\right)(x) = \mathfrak{I}_{\mathsf{ReLU}}\left( \nu_1\right) \circ \mathfrak{I}_{\mathsf{ReLU}}\left( \nu_1\right)(x)
+$$
+
+**Note:** When composing, the output layer width of the innermost neural network must match the input layer width of the outer neural network.
+
+```{r}
+c(1,5,6,3,3) |> create_nn() -> nu_1
+c(3,4,6,3,2) |> create_nn() -> nu_2
+nu_2 |> comp(nu_1)
+
+```
+
+### Scalar Multiplication
+
+Given a neural network you may perform scalar left multiplication on a neural network.
+They instantiate in quite nice ways.
+Suppose if the neural network instantiated as $\mathfrak{I}_{\mathsf{ReLU}}\left( \nu \right)(x)$, scalar left multiplication instantiates as:
+
+$$
+\mathfrak{I}_{\mathsf{ReLU}} \left( \lambda \triangleright \nu\right)(x) = \lambda \cdot \mathfrak{I}_{\mathsf{ReLU}}\left( \nu\right)(x)
+$$
+
+Scalar left multiplication instantiates as:
+
+$$
+\mathfrak{I}_{\mathsf{ReLU}} \left(\nu\triangleleft \lambda\right)(x) = \mathfrak{I}_{\mathsf{ReLU}}\left(\nu\right)(\lambda \cdot x)
+$$
+
+Here is the R code for this, compare the two outputs:
+
+```{r}
+c(1,3,4,8,1) |> create_nn() -> nn
+nn |> inst(ReLU,5)
+2 |> slm(nn) |> inst(ReLU, 5)
+
+```
+
+And now for scalar right multiplication, although the difference in output is not as obvious:
+
+```{r}
+c(1,3,4,8,1) |> create_nn() -> nn
+nn |> inst(ReLU, 5)
+nn |> srm(5) |> inst(ReLU,5)
+
+
+
+```
+
+### Stacking Neural Networks
+
+Neural networks may also be stacked on top each other.
+The instantiation of two stacked neural networks is the concatenation of the outputs of the instantiated networks individually.
+In other words, mathematically we may say that:
+
+$$
+\mathfrak{I}_{\mathsf{ReLU}}\left( \nu_1 \boxminus \nu_2\right)\left( \left[x \quad y\right]^\intercal\right) = \left[ \mathfrak{I}_{\mathsf{ReLU}}\left( \nu_1\right) \left( x\right)\quad \mathfrak{I}_{\mathsf{ReLU}}\left( \nu_2\right)\left( y\right)\right]^\intercal
+$$
+
+To make this more concrete observe that:
+
+```{r}
+c(3,4,6,3,7,1,3,4) |> create_nn() -> nn_1
+c(2,6,4,5) |> create_nn() -> nn_2
+(nn_1 |> stk(nn_2)) |> inst(ReLU, c(4,3,2,1,6))
+print("Compare to:")
+nn_1 |> inst(ReLU, c(4,3,2))
+nn_2 |> inst(ReLU, c(1,6))
+
+
+```
+
+**Note** Stacking of unequal depth happens automatically by something called "tunneling".
+
+### Neural Network Sums
+
+Neural networks may be added such that the continuous function created under ReLU instantiation is the sum of the individual instantiated functions, i.e.
+
+$$
+\mathfrak{I}_{\mathsf{ReLU}}\left( \nu \oplus \mu\right)\left( x\right) = \mathfrak{I}_{\mathsf{ReLU}}\left( \nu \right)(x) + \mathfrak{I}_{\mathsf{ReLU}}\left(\mu\right)\left( x\right)
+$$
+
+The code works as follows:
+
+```{r}
+c(1,5,3,2,1) |> create_nn() -> nu
+c(1,5,4,9,1) |> create_nn() -> mu
+
+nu |> inst(ReLU,4) -> x_1
+mu |> inst(ReLU,4) -> x_2
+x_1 + x_2 -> result_1
+print("The sum of the instantiated neural network is:")
+print(result_1)
+
+(nu |> nn_sum(mu)) |> inst(ReLU,4) -> result_2
+print("The instation of their neural network sums")
+print(result_2)
+```
+
+### Neural Networks for Squaring and Products
+
+Now that we have a basic operations for neural networks, we are able to go into more sophisticated functions.
+We start with some basic
+
+##### The $\mathsf{Sqr}^{q,\varepsilon}$ Neural Networks
+
+We have neural networks for approximating squaring any real number.
+These only work with ReLU instantiates and most results in this field as well as most of the literature focuses on ReLU.
+
+These must be supplied with two arguments, $q\in (2,\infty)$ and $\varepsilon \in (0,\infty)$.
+Accuracy increases the closer we are the $2$ and $\varepsilon$ respectively.
+
+See the examples:
+
+```{r}
+Sqr(2.1,0.1) |> inst(ReLU,5)
+```
+
+##### The $\mathsf{Prd}^{q,\varepsilon}$ Neural Networks
+
+Similarly we may define the product neural network which approximates the product of two real numbers, given $q \in (2,\infty)$, and $\varepsilon \in (0,\infty)$.
+Accuracy increases the closer we are to $2$ and $\varepsilon$ respectively.
+These must be instantiated with a list of two real numbers:
+
+```{r}
+Prd(2.1,0.1) |> inst(ReLU, c(2,3))
+```
+
+### Neural Network for Raising to a Power
+
+Repeated applications of the $\mathsf{Prd}^{q,\varepsilon}$.
+Will give us neural networks for approximating raising to a power.
+
+These are called using the $\mathsf{Pwr}^{q,\varepsilon}$ neural networks.
+These need three arguments $q\in (2,\infty)$, $\varepsilon \in (0,\infty)$, and $n \in \mathbb{N}$, the power to which we are approximating.
+This may require significant computation time, depending on the power to which we are approximating.
+Here is an example:
+
+```{r}
+Pwr(2.1, 0.1,3) |> inst(ReLU, 2)
+```
+
+### Neural Network Exponentials, Sines, and Cosines
+
+We can do neural network sums, scalar left multiplication, and raising to a power.
+We thus have enough technology to create neural network polynomials, and more specifically finite power series approximations of common functions.
+
+##### The $\mathsf{Xpn}_n^{q,\varepsilon}$ Networks
+
+This is the neural network for approximating $e^x$.
+These need three arguments $q\in (2,\infty)$, $\varepsilon \in (0,\infty)$, and $n \in \mathbb{N}$, the power to which we will truncate the power series expansion.
+This may require significant computation time, depending on the power to which we are approximating.
+Here is an example of the code
+
+```{r}
+Xpn(5,2.1,0.1) |> inst(ReLU, 2)
+print("Compare to:")
+exp(2)
+```
+
+By far the biggest improvement in accuracy will come from increasing the power series truncation limit.
+This will also contribute the most to computation time.
+
+The length of computation time presents a challenge at this point.
+Steps have been taken to vectorize the code as much as possible but future work may need to be done in the direction of reimplementing this using Rcpp.
+
+##### The $\mathsf{Csn}_n^{q,\varepsilon}$ Networks
+
+This is the neural network for approximating $\cos(x)$.
+These need three arguments $q\in (2,\infty)$, $\varepsilon \in (0,\infty)$, and $n \in \mathbb{N}$, the power to which we will truncate the power series expansion.
+This may require significant computation time, depending on the power to which we are approximating.
+Here is an example of the code
+
+```{r}
+Csn(3,2.1,0.1) |> inst(ReLU, 0.4)
+print("Compare to:")
+cos(0.4)
+```
+
+By far the biggest improvement in accuracy will come from increasing the power series truncation limit.
+This will also contribute the most to computation time.
+
+The length of computation time presents a challenge at this point.
+Steps have been taken to vectorize the code as much as possible but future work may need to be done in the direction of reimplementing this using Rcpp.
+
+##### The $\mathsf{Sne}_n^{q,\varepsilon}$ Networks
+
+This is the neural network for approximating $\sin(x)$.
+These need three arguments $q\in (2,\infty)$, $\varepsilon \in (0,\infty)$, and $n \in \mathbb{N}$, the power to which we will truncate the power series expansion.
+This may require significant computation time, depending on the power to which we are approximating.
+Here is an example of the code
+
+```{r}
+Sne(3,2.1,0.1) |> inst(ReLU, 0.4)
+print("Compare to:")
+sin(0.4)
+```
+
+By far the biggest improvement in accuracy will come from increasing the power series truncation limit.
+This will also contribute the most to computation time.
+
+The length of computation time presents a challenge at this point.
+Steps have been taken to vectorize the code as much as possible but future work may need to be done in the direction of reimplementing this using Rcpp.
+
+##### The $\mathsf{Trp}^h$ and $\mathsf{Etr}^{N,h}$ Networks
+
+A simple trapezoidal approximation can be done with neural networks given two sample points along the two legs of a trapezoid.
+These may be instantiated with any of the three activation functions implemented, ReLU, Sigmoid, or Tanh Observe:
+
+```{r}
+h = 0.2
+mesh = c(0,0+h)
+samples = sin(mesh)
+Trp(0.1) |> inst(ReLU, samples)
+Trp(0.1) |> inst(Sigmoid, samples)
+Trp(0.1) |> inst(Tanh, samples)
+```
+
+Now we may extend this to give use what we call the "extended trapezoid", which will approximate the area under a curve $f(x)$ using the trapezoidal rule once instantiated with function sample values from all of the mesh.
+These require two parameters $N \in \mathbb{N}$, representing the number of trapezoids that we want to split the area under $f(x)$ into, and $h$ the mesh width.
+Note we will always have one less trapezoid than the number of meshpoints.
+
+These may be instantiated with any of the three activation functions implemented, ReLU, Sigmoid, or Tanh.
+
+Obseve:
+
+```{r}
+seq(0,pi, length.out = 1000) -> x
+sin(x) -> samples
+
+Etr(1000-1,pi/1000) |> inst(ReLU, samples)
+print("Compare with:")
+sin |> integrate(0,pi)
+```
+
+#### Maximum Convolution Approximations
+
+Suppose you have a function $f(x):[a,b] \rightarrow \mathbb{R}$, with a Lipschitz constant $L$.
+A global Lipschitz constant is not necessary $L$ could be the maximum upper bound of the absolute value of the slope of the function over $[a,b]$
+
+Take sample points $\{x_1,x_2,...,x_n\}$ within the domain.
+Then let $f_1,f_2,...,f_n$ be a family of functions, define for all $i \in \{1,2,...,n\}$ as: $$
+f_i(x) = f(x_i) - L|x-x_i|_1
+$$
+
+These would create little "hills" with the tip of the hill being at whatever points on the function where the samples were take from.
+We may "saw off" the base of these hills giving us a sawtooth-like function that approximates our function $f(x)$, i.e.
+
+$$
+\hat{f} (x) = \max_{i \in \{1,2,...,n\}} \left\{ f_i \left( x\right)\right\}
+$$
+
+We will call this the "maximum convolution approximation".
+These must be instantiated with ReLU for maximum accuracy.
+
+These are implemented in this package as follows:
+
+```{r}
+seq(0.01,5,length.out = 500) -> x 
+sin(x) + log10(x) -> y
+1 -> L
+MC(x,y,L) |> inst(ReLU, 2.5)
+print("Compare to:")
+sin(2.5)+log10(2.5)
 ```

@@ -18,6 +18,8 @@ much like the definition itself.
 
 \emph{Note:} If you choose to specify a \eqn{d} other that \eqn{0} you must instantiate with
 a vector or list of that length.
+
+For a specific definition, see:
 }
 \description{
 A function that creates the \eqn{\mathsf{Nrm}} neural networks.that take
@@ -28,8 +30,6 @@ activation.
 Nrm(2) |> inst(ReLU, c(5,6))
 Nrm(5) |> inst(ReLU,c(0,-9,3,4,-11))
 
-
-For a specific definition, see:
 
 }
 \references{

@@ -23,16 +23,17 @@ source("R/nn_sum.R")
 #' \emph{Note:} If you choose to specify a \eqn{d} other that \eqn{0} you must instantiate with
 #' a vector or list of that length.
 #'
-#' @examples
-#' Nrm(2) |> inst(ReLU, c(5,6))
-#' Nrm(5) |> inst(ReLU,c(0,-9,3,4,-11))
-#'
-#'
 #' For a specific definition, see:
 #'
 #' @references Lemma 4.2.1. Jentzen, A., Kuckuck, B., and von Wurstemberger, P. (2023).
 #' Mathematical introduction to deep learning: Methods, implementations,
 #' and theory. \url{https://arxiv.org/abs/2310.20360}
+#'
+#' @examples
+#' Nrm(2) |> inst(ReLU, c(5,6))
+#' Nrm(5) |> inst(ReLU,c(0,-9,3,4,-11))
+#'
+#'
 
 #' @export
 #'

@@ -7,7 +7,7 @@
 view_nn(nn)
 }
 \arguments{
-\item{nn}{A neural network of the type creted by \code{\link{create_nn()}}, i.e.
+\item{nn}{A neural network., i.e.
 a list of lists of \eqn{W} and \eqn{b}.}
 }
 \value{
@@ -25,5 +25,5 @@ c(5, 6, 7, 9) |>
 Sqr(2.1, 0.1) |> view_nn()
 
 Xpn(3, 2.1, 1.1) |> view_nn()
-Pwr(2, 2.1, 0.1) |> view_nn()
+Pwr(2.1, 0.1, 3) |> view_nn()
 }

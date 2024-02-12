@@ -2,9 +2,12 @@
 % Please edit documentation in R/stacking.R
 \name{stk}
 \alias{stk}
+\alias{\%stk\%}
 \title{stk}
 \usage{
 stk(nu, mu)
+
+nu \%stk\% mu
 }
 \arguments{
 \item{nu}{neural network.}
@@ -30,13 +33,7 @@ of our input x under instantiation with a continuous activation function.
 Also the word parallelization has a lot of baggage when it comes to
 artificial neural networks in that it often means many different CPUs working
 together.
-}
-\description{
-A function that stacks neural networks.
-}
-\examples{
-create_nn(c(4,5,6)) \%stk\% create_nn(c(6,7))
-create_nn(c(9,1,67)) |> stk(create_nn(c(4,4,4,4,4)))
+
 
 
 \emph{Remark:} We will use only one symbol for stacking equal and unequal depth
@@ -48,6 +45,16 @@ of different sizes is what is needed.
 
 This operation on neural networks, called "parallelization" is found in:
 
+A stacked neural network of nu and mu.
+}
+\description{
+A function that stacks neural networks.
+}
+\examples{
+create_nn(c(4,5,6)) |> stk(create_nn(c(6,7)))
+create_nn(c(9,1,67)) |> stk(create_nn(c(4,4,4,4,4)))
+
+
 }
 \references{
 Grohs, P., Hornung, F., Jentzen, A. et al. Space-time error estimates for deep
@@ -56,7 +63,7 @@ neural network approximations for differential equations. (2023).
 
 And especially in:
 
-#' Definition 2.14 in Rafi S., Padgett, J.L., Nakarmi, U. (2024)
+' Definition 2.14 in Rafi S., Padgett, J.L., Nakarmi, U. (2024)
 Towards an Algebraic Framework For
 Approximating Functions Using Neural Network Polynomials
 \url{https://arxiv.org/abs/2402.01058}

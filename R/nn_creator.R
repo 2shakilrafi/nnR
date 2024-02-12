@@ -24,7 +24,7 @@ generate_random_matrix <- function(rows, cols) {
 #'
 #' @examples
 #' create_nn(c(8, 7, 8))
-#' create_nn()
+#' create_nn(c(4,4))
 #'
 #' @references Definition 2.1 in Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For
 #' Approximating Functions Using Neural Network Polynomials

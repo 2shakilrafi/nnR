@@ -127,7 +127,7 @@ out <- function(nu) {
 lay <- function(nu) {
   if (is_nn(nu)) {
     layer_architecture <- sapply(nu, function(x) dim(x$W)[1])
-    layer_architecture <- c(layer_architecture, inn(nu))
+    layer_architecture <- c(inn(nu),layer_architecture)
     return(layer_architecture)
   } else {
     stop("Only neural networks can have layer architectures")

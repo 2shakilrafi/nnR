@@ -27,8 +27,6 @@ source("R/is_nn.R")
 #' infix version.
 #'
 #' @examples
-#' 5 %slm% Prd(2.1, 0.1)
-#' Prd(2.1, 0.1) %srm% 5
 #'
 #' 5 |> slm(Prd(2.1, 0.1))
 #' Prd(2.1, 0.1) |> srm(5)

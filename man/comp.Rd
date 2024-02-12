@@ -28,7 +28,6 @@ networks assuming they are compatible, i.e., given
 \eqn{\mathsf{I}(\nu)_1 = \mathsf{O}(\nu_2)}.
 }
 \examples{
-create_nn(c(5, 4, 6, 7)) \%comp\% create_nn(c(4, 1, 5))
 create_nn(c(5, 4, 6, 7)) |> comp(create_nn(c(4, 1, 5)))
 }
 \references{
