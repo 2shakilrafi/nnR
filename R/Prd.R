@@ -11,8 +11,10 @@ source("R/scalar_mult.R")
 #' \eqn{q}, \eqn{\varepsilon}, a real number \eqn{x} and instantiation with ReLU.
 #' activation.
 #'
-#' @param q A real number within \eqn{(2,\infty)}
-#' @param eps A real number within \eqn{(0,\infty)}
+#' @param q a real number in \eqn{(2,\infty)}. Accuracy as well as computation
+#' time increases as \eqn{q} gets closer to \eqn{2} increases
+#' @param eps a real number in \eqn{(0,\infty)}. ccuracy as well as computation
+#' time increases as \eqn{\varepsilon} gets closer to \eqn{0} increases
 #'
 #'
 #'

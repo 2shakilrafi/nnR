@@ -456,3 +456,5 @@ MC(x,y,L) |> inst(ReLU, 2.5)
 print("Compare to:")
 sin(2.5)+log10(2.5)
 ```
+
+#### References

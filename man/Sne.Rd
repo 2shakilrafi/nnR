@@ -7,11 +7,14 @@
 Sne(n, q, eps)
 }
 \arguments{
-\item{n}{the number of Taylor iterations}
+\item{n}{The number of Taylor iterations. Accuracy as well as computation
+time increases as \eqn{n} increases}
 
-\item{q}{a real number in \eqn{(2,\infty)}}
+\item{q}{a real number in \eqn{(2,\infty)}. Accuracy as well as computation
+time increases as \eqn{q} gets closer to \eqn{2} increases}
 
-\item{eps}{a real number in \eqn{(0,\infty)}
+\item{eps}{a real number in \eqn{(0,\infty)}. ccuracy as well as computation
+time increases as \eqn{\varepsilon} gets closer to \eqn{0} increases
 
 \emph{Note: } In practice for most desktop uses
 \eqn{q < 2.05} and \eqn{\varepsilon< 0.05} tends to cause problems in
@@ -26,10 +29,9 @@ activation and given value \eqn{x}.
 Returns the \eqn{\mathsf{Sne}} neural networks
 }
 \examples{
-Sne(3, 2.1, 0.1) # this may take some time, click only once and wait
+Sne(2, 2.3, 0.3) # this may take some time, click only once and wait
 
-Sne(3, 2.1, 0.1) |> inst(ReLU, 1.57) # this may take some time, click only once and wait
-
+Sne(2, 2.3, 0.3) |> inst(ReLU, 1.57) # this may take some time, click only once and wait
 }
 \references{
 Definition 2.30. Rafi S., Padgett, J.L., Nakarmi, U. (2024) Towards an Algebraic Framework For

@@ -7,10 +7,11 @@
 Sqr(q, eps)
 }
 \arguments{
-\item{q}{parameter for the Sqr network. \eqn{2 \in (2,\infty)}}
+\item{q}{a real number in \eqn{(2,\infty)}. Accuracy as well as computation
+time increases as \eqn{q} gets closer to \eqn{2} increases}
 
-\item{eps}{parameter for the Sqr network. \eqn{eps \in (0,1]}. You may
-choose epsilon to be greater than 1 but that leads to large errors}
+\item{eps}{a real number in \eqn{(0,\infty)}. ccuracy as well as computation
+time increases as \eqn{\varepsilon} gets closer to \eqn{0} increases}
 }
 \value{
 A neural network that approximates the square of a real number.when

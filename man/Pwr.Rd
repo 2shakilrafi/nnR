@@ -7,12 +7,14 @@
 Pwr(q, eps, exponent)
 }
 \arguments{
-\item{q}{inside \eqn{(2,\infty)}.}
+\item{q}{a real number in \eqn{(2,\infty)}. Accuracy as well as computation
+time increases as \eqn{q} gets closer to \eqn{2} increases}
 
-\item{eps}{inside \eqn{(0,\infty)}.}
+\item{eps}{a real number in \eqn{(0,\infty)}. ccuracy as well as computation
+time increases as \eqn{\varepsilon} gets closer to \eqn{0} increases}
 
-\item{exponent}{the exponent which the Pwr network will approximate. Must be
-a non-negative integer.}
+\item{n}{The power to which we will raise. Computation
+time increases as \eqn{n} increases}
 }
 \value{
 A neural network that approximates raising a number to exponent, when

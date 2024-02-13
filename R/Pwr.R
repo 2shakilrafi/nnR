@@ -9,10 +9,12 @@ source("R/aux_fun.R")
 #' A function that returns the \eqn{\mathsf{Pwr}} neural networks.
 #'
 #'
-#' @param q inside \eqn{(2,\infty)}.
-#' @param eps inside \eqn{(0,\infty)}.
-#' @param exponent the exponent which the Pwr network will approximate. Must be
-#' a non-negative integer.
+#' @param n The power to which we will raise. Computation
+#' time increases as \eqn{n} increases
+#' @param q a real number in \eqn{(2,\infty)}. Accuracy as well as computation
+#' time increases as \eqn{q} gets closer to \eqn{2} increases
+#' @param eps a real number in \eqn{(0,\infty)}. ccuracy as well as computation
+#' time increases as \eqn{\varepsilon} gets closer to \eqn{0} increases
 #'
 #' @return A neural network that approximates raising a number to exponent, when
 #' given appropriate \eqn{q,\varepsilon} and exponent when instantiated

@@ -7,11 +7,14 @@
 Xpn(n, q, eps)
 }
 \arguments{
-\item{n}{Number of Taylor iterations.}
+\item{n}{The number of Taylor iterations. Accuracy as well as computation
+time increases as \eqn{n} increases}
 
-\item{q}{Real number in \eqn{(2,\infty)}.}
+\item{q}{a real number in \eqn{(2,\infty)}. Accuracy as well as computation
+time increases as \eqn{q} gets closer to \eqn{2} increases}
 
-\item{eps}{Real number in \eqn{(0, \infty)}.
+\item{eps}{a real number in \eqn{(0,\infty)}. ccuracy as well as computation
+time increases as \eqn{\varepsilon} gets closer to \eqn{0} increases
 
 \emph{Note: } In practice for most desktop uses
 \eqn{q < 2.05} and \eqn{\varepsilon< 0.05} tends to cause problems in

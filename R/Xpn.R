@@ -2,9 +2,12 @@ source("R/Tay.R")
 
 #' The Xpn function
 #'
-#' @param n Number of Taylor iterations.
-#' @param q Real number in \eqn{(2,\infty)}.
-#' @param eps Real number in \eqn{(0, \infty)}.
+#' @param n The number of Taylor iterations. Accuracy as well as computation
+#' time increases as \eqn{n} increases
+#' @param q a real number in \eqn{(2,\infty)}. Accuracy as well as computation
+#' time increases as \eqn{q} gets closer to \eqn{2} increases
+#' @param eps a real number in \eqn{(0,\infty)}. ccuracy as well as computation
+#' time increases as \eqn{\varepsilon} gets closer to \eqn{0} increases
 #'
 #' \emph{Note: } In practice for most desktop uses
 #' \eqn{q < 2.05} and \eqn{\varepsilon< 0.05} tends to cause problems in

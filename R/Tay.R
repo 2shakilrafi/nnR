@@ -7,14 +7,18 @@ source("R/Aff.R")
 #'
 #' @param f the function to be Taylor approximated, for now "exp", "sin"
 #' and "cos". NOTE use the quotation marks when using this argument.
-#' @param n the extent of Taylor approximations, a natural number
-#' @param q argument for the Pwr networks \eqn{q \in (2,\infty)}
-#' @param eps argument for the Pwr networks \eqn{eps \in (0,\infty)}
+#' @param n The number of Taylor iterations. Accuracy as well as computation
+#' time increases as \eqn{n} increases
+#' @param q a real number in \eqn{(2,\infty)}. Accuracy as well as computation
+#' time increases as \eqn{q} gets closer to \eqn{2} increases
+#' @param eps a real number in \eqn{(0,\infty)}. ccuracy as well as computation
+#' time increases as \eqn{\varepsilon} gets closer to \eqn{0} increases
 #'
 #' @examples
-#' Tay("sin", 2, 2.1, 0.1) |> inst(ReLU, 2) # May take some time, please only click once
-#' Tay("cos", 2, 2.1, 0.1) # May take some time, please only click once
-#' Tay("exp", 2, 2.1, 0.1) # May take some time, please only click once
+#' Tay("sin", 2, 2.3, 0.3) |> inst(ReLU, 1.5) # May take some time, please only click once
+#' Tay("cos", 2, 2.3, 0.3) |> inst(ReLU, 1) # May take some time, please only click once
+#' Tay("exp", 4, 2.3, 0.3) |> inst(ReLU, 1.5) # May take some time, please only click once
+#'
 #'
 #' @return a neural network that approximates the function f. For now only
 #' \eqn{sin}, \eqn{cos}, and \eqn{e^x} are available.

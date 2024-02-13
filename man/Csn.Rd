@@ -7,11 +7,14 @@
 Csn(n, q, eps)
 }
 \arguments{
-\item{n}{The number of Taylor iterations}
+\item{n}{The number of Taylor iterations. Accuracy as well as computation
+time increases as \eqn{n} increases}
 
-\item{q}{a real number in \eqn{(2,\infty)}}
+\item{q}{a real number in \eqn{(2,\infty)}. Accuracy as well as computation
+time increases as \eqn{q} gets closer to \eqn{2} increases}
 
-\item{eps}{a real number in \eqn{(0,\infty)}
+\item{eps}{a real number in \eqn{(0,\infty)}. ccuracy as well as computation
+time increases as \eqn{\varepsilon} gets closer to \eqn{0} increases
 
 \emph{Note: } In practice for most desktop uses
 \eqn{q < 2.05} and \eqn{\varepsilon< 0.05} tends to cause problems in
@@ -25,9 +28,9 @@ with ReLU activation. See also \code{\link{Sne}}.
 The function that returns \eqn{\mathsf{Csn}}.
 }
 \examples{
-Csn(3, 2.1, 0.1) # this may take some time
+Csn(2, 2.5, 0.5) # this may take some time
 
-Csn(3, 2.1, 0.1) |> inst(ReLU, 1.57)
+Csn(2, 2.5, 0.5) |> inst(ReLU, 1.50)
 
 }
 \references{

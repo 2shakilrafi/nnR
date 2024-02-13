@@ -4,9 +4,12 @@ source("R/Tay.R")
 #' @description Returns the \eqn{\mathsf{Sne}} neural networks
 #'
 #'
-#' @param n the number of Taylor iterations
-#' @param q a real number in \eqn{(2,\infty)}
-#' @param eps a real number in \eqn{(0,\infty)}
+#' @param n The number of Taylor iterations. Accuracy as well as computation
+#' time increases as \eqn{n} increases
+#' @param q a real number in \eqn{(2,\infty)}. Accuracy as well as computation
+#' time increases as \eqn{q} gets closer to \eqn{2} increases
+#' @param eps a real number in \eqn{(0,\infty)}. ccuracy as well as computation
+#' time increases as \eqn{\varepsilon} gets closer to \eqn{0} increases
 #'
 #' \emph{Note: } In practice for most desktop uses
 #' \eqn{q < 2.05} and \eqn{\varepsilon< 0.05} tends to cause problems in
@@ -21,11 +24,10 @@ source("R/Tay.R")
 #' \url{https://arxiv.org/abs/2402.01058}
 #'
 #' @examples
-#' Sne(3, 2.1, 0.1) # this may take some time, click only once and wait
+#' Sne(2, 2.3, 0.3) # this may take some time, click only once and wait
 #'
-#' Sne(3, 2.1, 0.1) |> inst(ReLU, 1.57) # this may take some time, click only once and wait
-#'
-#' @export
+#' Sne(2, 2.3, 0.3) |> inst(ReLU, 1.57) # this may take some time, click only once and wait
+
 
 Sne <- function(n, q, eps) {
   if (q <= 2 || eps <= 0) {

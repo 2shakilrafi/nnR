@@ -7,9 +7,11 @@
 Prd(q, eps)
 }
 \arguments{
-\item{q}{A real number within \eqn{(2,\infty)}}
+\item{q}{a real number in \eqn{(2,\infty)}. Accuracy as well as computation
+time increases as \eqn{q} gets closer to \eqn{2} increases}
 
-\item{eps}{A real number within \eqn{(0,\infty)}}
+\item{eps}{a real number in \eqn{(0,\infty)}. ccuracy as well as computation
+time increases as \eqn{\varepsilon} gets closer to \eqn{0} increases}
 }
 \value{
 A neural network that takes in \eqn{x} and \eqn{y} and approximately
