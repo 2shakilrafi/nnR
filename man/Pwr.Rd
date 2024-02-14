@@ -13,8 +13,8 @@ time increases as \eqn{q} gets closer to \eqn{2} increases}
 \item{eps}{a real number in \eqn{(0,\infty)}. ccuracy as well as computation
 time increases as \eqn{\varepsilon} gets closer to \eqn{0} increases}
 
-\item{n}{The power to which we will raise. Computation
-time increases as \eqn{n} increases}
+\item{exponent}{The power to which we will raise. Computation
+time increases as exponent increases}
 }
 \value{
 A neural network that approximates raising a number to exponent, when

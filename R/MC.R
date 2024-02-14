@@ -35,11 +35,11 @@ MC <- function(X, y, L) {
     X |>
       matrix() |>
       t() -> X
-    print("X was automatically turned into a row vector")
+    message("X was automatically turned into a row vector.")
   }
   if (y |> is.matrix() == FALSE) {
     y |> matrix() -> y
-    print("y was automatically turned into a column vector")
+    message("y was automatically turned into a column vector.")
   }
   X |> nrow() -> d # the dimensionality of our x samples
   X |> ncol() -> n # the number of samples to taken

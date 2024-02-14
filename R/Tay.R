@@ -38,7 +38,7 @@ Tay <- function(f, n, q, eps) {
       }
       for (i in 1:n) {
         return_network |> nn_sum((1 / factorial(i)) |> slm(Pwr(q, eps, i))) -> return_network
-        print(paste("Power series approximation added for power:",i))
+        message("Power series approximation added for power: ",i)
       }
       return(return_network)
     }
@@ -52,7 +52,7 @@ Tay <- function(f, n, q, eps) {
       for (i in 1:n) {
         ((-1)^i) / factorial(2 * i) -> coeff
         return_network |> nn_sum(coeff |> slm(Pwr(q, eps, 2 * i))) -> return_network
-        print(paste("Power series approximation added for power:",2*i))
+        message("Power series approximation added for power: ",2*i)
       }
       return(return_network)
     }

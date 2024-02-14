@@ -9,8 +9,8 @@ source("R/aux_fun.R")
 #' A function that returns the \eqn{\mathsf{Pwr}} neural networks.
 #'
 #'
-#' @param n The power to which we will raise. Computation
-#' time increases as \eqn{n} increases
+#' @param exponent The power to which we will raise. Computation
+#' time increases as exponent increases
 #' @param q a real number in \eqn{(2,\infty)}. Accuracy as well as computation
 #' time increases as \eqn{q} gets closer to \eqn{2} increases
 #' @param eps a real number in \eqn{(0,\infty)}. ccuracy as well as computation

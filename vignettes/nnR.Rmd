@@ -426,7 +426,7 @@ print("Compare with:")
 sin |> integrate(0,pi)
 ```
 
-#### Maximum Convolution Approximations
+### Maximum Convolution Approximations
 
 Suppose you have a function $f(x):[a,b] \rightarrow \mathbb{R}$, with a Lipschitz constant $L$.
 A global Lipschitz constant is not necessary $L$ could be the maximum upper bound of the absolute value of the slope of the function over $[a,b]$
@@ -457,4 +457,4 @@ print("Compare to:")
 sin(2.5)+log10(2.5)
 ```
 
-#### References
+### References
