@@ -1,9 +1,8 @@
----
-bibliography: references.bib
-output:
-  html_document:
-    df_print: paged
----
+# ![](images/hex-nnR-4-01.png){width="5cm"}nnR
+
+### Neural Networks Made Algebraic
+
+#### by Shakil Rafi
 
 This is a repository which implements a certain neural network calculus.
 This neural network calculus, or atleast the version implemented derives itself mainly from \<<https://doi.org/10.48550/arXiv.2402.01058>\>, which in turn is a highly modified version of that found in detail in \<<https://doi.org/10.1007/s10444-022-09970-2>\> and \<<https://doi.org/10.48550/arXiv.2310.20360>\>.
