@@ -1,4 +1,6 @@
-# ![](images/hex-nnR-4-01.png){width="1in" height="1.27in"}nnR
+![](images/hex-nnR-4-01.png){width="1in" height="1.27in"}
+
+# nnR
 
 ### Neural Networks Made Algebraic
 
