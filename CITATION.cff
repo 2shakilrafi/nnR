@@ -1,0 +1,22 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: nnR
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Shakil
+    family-names: Rafi
+    email: sarafi@uark.edu
+    affiliation: University of Arkansas
+    orcid: 'https://orcid.org/0000-0003-3791-9697'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.10672209
+repository-code: 'https://github.com/2shakilrafi/nnR'
+license: GPL-3.0
+version: '0.10'
+date-released: '2024-02-16'
