@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/752787458.svg)](https://zenodo.org/badge/latestdoi/752787458)
 ![](images/hex-nnR-4-01.png){width="1in" height="1.27in"}
 
 # nnR
