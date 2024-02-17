@@ -33,23 +33,22 @@ aas-journal: Astrophysical Journal <- The name of the AAS journal.
 # Summary
 
 There exists an algebraic way of viewing feedforward multi-layer perceptrons as an ordered tuple of ordered pairs.
-That is to say a neural network is $\nu = ((W_1,b_1),(W_2,b_2),...(W_L,b_L))$.
+That is to say a neural network is $\nu = ((W_1,b_1),(W_2,b_2),...(W_L,b_L))$, for some collection of weight matrices $W_i$ and bias vectors $b_i$.
 
+These were first introduced in [@petersen2018], extended in [@grohs2023], and [@bigbook], and along with that several operations such as composition, stacking, scalar left and right multiplication, neural network sums and finally neural networks for squaring and products of real numbers were introduced.
+
+This was extended in [@rafi_towards_2024] to include neural networks for raising to a power, neural network polynomials, neural network exponentials, sines, cosines, and a rudimentary trapezoidal rule implementation.
 
 # Statement of need
 
-# Mathematics
+Despite
 
+# Mathematics
 
 # Citations
 
-
-
 # Figures
 
-
-
 # Acknowledgements
-
 
 # References
