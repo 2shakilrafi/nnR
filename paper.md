@@ -1,4 +1,5 @@
-title: 'nnR: A package to perform algebraic operations on neural networks'
+---
+itle: 'nnR: A package to perform algebraic operations on neural networks'
 tags:
   - R
   - neural networks
