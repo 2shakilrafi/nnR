@@ -1,5 +1,5 @@
 ---
-itle: 'nnR: A package to perform algebraic operations on neural networks'
+title: 'nnR: A package to perform algebraic operations on neural networks'
 tags:
   - R
   - neural networks
@@ -32,6 +32,8 @@ aas-journal: Astrophysical Journal <- The name of the AAS journal.
 
 # Summary
 
+There exists an algebraic way of viewing feedforward multi-layer perceptrons as an ordered tuple of ordered pairs.
+That is to say a neural network is $\nu = ((W_1,b_1),(W_2,b_2),...(W_L,b_L))$.
 
 
 # Statement of need
