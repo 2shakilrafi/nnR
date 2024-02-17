@@ -22,7 +22,7 @@ affiliations:
  - name: Toyota Financial Services, Plano, TX, 75024.
    index: 3
 date: 16 February 2024
-bibliography: references.bib
+bibliography: paper.bib
 
 # Optional fields if submitting to a AAS journal too, see this blog post:
 # https://blog.joss.theoj.org/2018/12/a-new-collaboration-with-aas-publishing
@@ -41,7 +41,10 @@ This was extended in [@rafi_towards_2024] to include neural networks for raising
 
 # Statement of need
 
-Despite
+Despite this framework's wide use in e.g. @Grohs_2022, @grohsetal, and @ackermann2023deep, in addition to @grohs2019spacetime and @bigbook, this framework has lacked a consistent implementation in a widely available language.
+
+A custom solution is needed as widely available artificial neural network software like PyTorch or TensorFlow are inadequate to the task.
+Specifically the authors believe that operations such as the Pwr network (
 
 # Mathematics
 
