@@ -38,6 +38,12 @@ These were first introduced in @petersen2018, extended in [@grohs2023], and [@bi
 
 This was extended in [@rafi_towards_2024] to include neural networks for raising to a power, neural network polynomials, neural network exponentials, sines, cosines, and a rudimentary trapezoidal rule implementation.
 
+This is not the standard way neural networks are envisioned, which are as piecewise linear approximants.
+This way of building out networks that approximate transcendental functions, using algebraic operations of sum, scalar multiplication, stacking, products, and raising to powers, differs markedly from deep learning orthodoxy.
+It is hoped that this package will find use in the community.
+
+A full explanation of what these algebraic operations are, and what these neural network sines, cosines, and exponents are is explained in @rafi_towards_2024.
+
 # Statement of need
 
 Despite this framework's wide use in e.g. @Grohs_2022, @grohsetal, and @ackermann2023deep, in addition to @grohs2019spacetime and @bigbook, this framework has lacked a consistent implementation in a widely available language.
@@ -53,15 +59,14 @@ Typical neural network libraries require training via backpropagation, and it is
 Finally, all neural network architectures posited to exist in [@rafi_towards_2024], such as Pwr, Xpn, Csn, Sne, and the 1-D interpolation scheme have associated with theme extensive, and sometimes very convoluted bounds for parameter, depth, and accuracy.
 It is nice to have an implementation in R if only to run simulations, but also to test out some of these bounds that are proposed, and further as pedagogical tools to promote a wider dissemination of this rather new neural network calculus.
 
-As a bonus, R's widely known and easy to use infix notation with %function% allows us to translate directly, theorems in @rafi_towards_2024, and @grohs2019spacetime, to software.
-For instance $\frac{1}{2}\triangleright(\nu_1 \bullet \nu_2)$ is rendered directly as $0.5 \:\%slm\% \:(nu\_1 \: \%comp\% \: nu\_2)$.
+As a bonus, R's widely known and easy to use infix notation with %function% allows us to translate directly, theorems in @rafi_towards_2024, @grohs2019spacetime, and @bigbook to software.
+For instance $\frac{1}{2}\triangleright(\nu_1 \bullet \nu_2)$ is rendered directly as `0.5 %slm% (nu_1  %comp% nu_2)`.
 
-# Mathematics
-
-# Citations
-
-# Figures
+A concerted effort has been made to make this software as fast as possible, with R vectorization.
+Future work will be focused on re-implementing this, but using Rcpp.
 
 # Acknowledgements
+
+This work was conducted fully or in part on computational resources at the Arkansas High Performance Computing Center
 
 # References
