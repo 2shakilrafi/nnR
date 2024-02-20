@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/752787458.svg)](https://zenodo.org/badge/latestdoi/752787458)
-<img src="images/hex-nnR-4-01.png" alt="image_alt_text" width="1in" height="1.27in">
 
+<img src="images/hex-nnR-4-01.png" alt="image_alt_text" width="1in" height="1.27in"/>
 
 # nnR
 
