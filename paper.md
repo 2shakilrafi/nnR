@@ -16,6 +16,7 @@ authors:
 - name: Joshua Lee Padgett
   equal-contrib: false
   affiliation: 3
+  orcid: "0000-0001-9369-351X"
 bibliography: paper.bib
 affiliations:
 - name: Department of Mathematical Sciences, University of Arkansas, Fayetteville,
