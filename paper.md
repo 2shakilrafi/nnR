@@ -45,7 +45,7 @@ A full explanation of what these algebraic operations are, and what these neural
 
 # Statement of need
 
-Despite this framework's wide use in e.g. [@Grohs_2022], [@grohsetal], and [@ackermann2023deep], in addition to [@grohs2019spacetime] and [@bigbook], this framework has lacked a consistent implementation in a widely available language.
+Despite this framework's wide use in e.g. [@grohsetal], [@Grohs_2022], and [@ackermann2023deep], in addition to [@grohs2019spacetime] and [@bigbook], this framework has lacked a consistent implementation in a widely available language.
 
 A custom solution is needed as widely available artificial neural network software like PyTorch or TensorFlow are inadequate to the task.
 Specifically the authors believe that operations such as the Pwr network with its associated tunnel networks cannot adequately be described using the layer structure that PyTorch or indeed TensorFlow require.
@@ -58,12 +58,12 @@ Typical neural network libraries require training via backpropagation, and it is
 Finally, all neural network architectures posited to exist in [@rafi_towards_2024], such as Pwr, Xpn, Csn, Sne, and the 1-D interpolation scheme have associated with theme extensive, and sometimes very convoluted bounds for parameter, depth, and accuracy.
 It is nice to have an implementation in R if only to run simulations, but also to test out some of these bounds that are proposed, and further as pedagogical tools to promote a wider dissemination of this rather new neural network calculus.
 
-As a bonus, R's widely known and easy to use infix notation with %function% allows us to translate directly, theorems in @rafi_towards_2024, @grohs2019spacetime, and @bigbook to software.
+As a bonus, R's widely known and easy to use infix notation with %function% allows us to translate directly, theorems in [@rafi_towards_2024], [@grohs2019spacetime], and [@bigbook] to software.
 For instance $\frac{1}{2}\triangleright(\nu_1 \bullet \nu_2)$ is rendered directly as `0.5 %slm% (nu_1  %comp% nu_2)`.
 
 A concerted effort has been made to make this software as fast as possible, with R vectorization.
 Future work will be focused on re-implementing this, but using Rcpp.
-The source code repository for nnR has been archived to Zenodo with DOI: <https://doi.org/10.5281/zenodo.10672209>
+The source code repository for nnR has been archived to Zenodo with [@doi:[10.5281/zenodo.10672209](https://doi.org/10.5281/zenodo.10672209)]
 
 # Acknowledgements
 
