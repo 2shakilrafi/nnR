@@ -17,8 +17,6 @@ authors:
   equal-contrib: false
   affiliation: 3
 bibliography: paper.bib
-aas-doi: "10.3847/xxxxx <- update this with the DOI from AAS once you know it."
-aas-journal: "Astrophysical Journal <- The name of the AAS journal."
 affiliations:
 - name: Department of Mathematical Sciences, University of Arkansas, Fayetteville,
     AR, 72701.
