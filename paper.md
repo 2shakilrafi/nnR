@@ -62,6 +62,7 @@ For instance $\frac{1}{2}\triangleright(\nu_1 \bullet \nu_2)$ is rendered direct
 
 A concerted effort has been made to make this software as fast as possible, with R vectorization.
 Future work will be focused on re-implementing this, but using Rcpp.
+The source code repository for nnR has been archived to Zenodo with DOI: <https://doi.org/10.5281/zenodo.10672209>
 
 # Acknowledgements
 
