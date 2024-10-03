@@ -31,8 +31,10 @@
 #' @export
 
 Aff <- function(W, b) {
+  if (W |> is.numeric() == FALSE || b |> is.numeric() == FALSE) (stop("Please enter numerics for W and b"))
   if (W |> is.matrix() == FALSE) (W |> matrix() -> W)
   if (b |> is.matrix() == FALSE) (b |> matrix() -> b)
+  if (nrow(W) != nrow(b)) (stop("The number of rows of W and b must match"))
   list(list(W = W, b = b)) -> return_network
   return(return_network)
 }
