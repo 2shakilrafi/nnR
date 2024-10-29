@@ -1,5 +1,5 @@
 #' @title is_nn
-#' @description Function to create a list of lists for neural network layers
+#' @description Function to test whether an object is a neural network or not.
 #'
 #' @param nn A neural network. Neural networks are defined to be an ordered
 #' list of ordered pairs of \eqn{(W,b)}. Where \eqn{W} is the matrix

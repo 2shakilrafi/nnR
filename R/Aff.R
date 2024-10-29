@@ -109,6 +109,8 @@ Sum <- function(n, k) {
     k %% 1 != 0 ||
     k < 1) {
     stop("n and k must be natural numbers")
+  } else if (n %% k != 0) {
+    stop("k must divide n")
   } else {
     k |> diag() -> W
     for (i in 2:n) {
@@ -116,7 +118,7 @@ Sum <- function(n, k) {
     }
     0 |> matrix(k) -> b
     Aff(W, b) -> return_network
-
+    
     return(return_network)
   }
 }
