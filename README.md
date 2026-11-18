@@ -49,7 +49,7 @@ The vignette (`vignette("nnR")`) walks through each operation with examples.
 
 ## Scope
 
-This is a reference implementation intended for teaching and for checking the mathematics. It is not optimized: the loops are written to follow the definitions, not to be fast. If you need speed, benchmark it first.
+This is a reference implementation intended for teaching and for checking the mathematics. It has not been optimized for speed, so benchmark it before using it on anything performance-sensitive.
 
 ## Development
 
